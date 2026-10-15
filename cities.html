@@ -2,30 +2,28 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
       name="description"
-      content="Discover the smart, green and human-centered cities of 2050 with FutureX."
+      content="Explore FutureX smart cities of 2050, sustainable architecture, clean energy and connected urban life."
     />
 
-    <meta name="theme-color" content="#070b19" />
-
-    <title>Future Cities | FutureX</title>
+    <title>Smart Cities | FutureX</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
@@ -34,48 +32,32 @@
       rel="stylesheet"
     />
 
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <div class="ambient ambient-one"></div>
-
-    <div class="ambient ambient-two"></div>
-
     <!-- NAVBAR -->
 
-    <nav
-      class="navbar navbar-expand-lg navbar-dark fixed-top fx-nav"
-      id="siteNav"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top future-navbar">
       <div class="container">
-        <a class="navbar-brand fx-brand" href="index.html">
-          <span class="brand-mark"
-            ><span></span><span></span><span></span
-          ></span>
-
-          <span
-            >Future<span class="brand-accent">X</span
-            ><small>DESIGNING TOMORROW</small></span
-          >
+        <a class="navbar-brand future-logo" href="index.html">
+          FUTURE<span>X</span><small> LIFE IN 2050</small>
         </a>
 
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
+          data-bs-target="#futureNavbar"
+          aria-controls="futureNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="toggler-lines"><i></i><i></i></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <div class="collapse navbar-collapse" id="futureNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -85,7 +67,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="cities.html">Cities</a>
+              <a class="nav-link active" aria-current="page" href="cities.html"
+                >Smart Cities</a
+              >
             </li>
 
             <li class="nav-item">
@@ -101,21 +85,9 @@
             </li>
 
             <li class="nav-item ms-lg-2">
-              <button
-                class="theme-toggle"
-                id="themeToggle"
-                type="button"
-                aria-label="Toggle color theme"
-              >
-                <i class="fa-solid fa-sun"></i>
-              </button>
-            </li>
-
-            <li class="nav-item ms-lg-2">
-              <a class="nav-cta" href="contact.html"
-                >Let’s talk
-                <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i
-              ></a>
+              <a class="btn future-btn future-btn-small" href="contact.html">
+                Let's Connect <i class="fa-solid fa-arrow-right ms-2"></i>
+              </a>
             </li>
           </ul>
         </div>
@@ -123,439 +95,578 @@
     </nav>
 
     <main>
-      <!-- HERO -->
+      <!-- PAGE HERO -->
 
-      <section class="page-hero compact-hero">
-        <img
-          class="hero-image"
-          src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2000&q=90"
-          alt="Modern city skyline"
-        />
+      <section class="inner-hero cities-hero">
+        <div class="inner-hero-overlay"></div>
 
-        <div class="hero-overlay"></div>
+        <div class="container inner-hero-content">
+          <p class="section-eyebrow">02 / URBAN EVOLUTION</p>
 
-        <div class="container page-hero-content reveal">
-          <span class="eyebrow eyebrow-light"
-            ><span class="eyebrow-dot"></span> FUTURE CITIES</span
-          >
+          <h1 class="inner-hero-title">
+            CITIES OF<br />
 
-          <h1>
-            Better places.<br /><span class="gradient-text"
-              >Better living.</span
-            >
+            <span>TOMORROW.</span>
           </h1>
 
-          <p>
-            Imagine urban spaces that are greener, smarter and designed around
-            the people who call them home.
+          <p class="inner-hero-description">
+            Discover a new vision of urban life where intelligent
+            infrastructure, clean energy and nature work together.
           </p>
+
+          <div class="breadcrumb-future">
+            <a href="index.html">Home</a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <span>Smart Cities</span>
+          </div>
         </div>
       </section>
 
-      <!-- CITY INTRODUCTION -->
+      <!-- INTRODUCTION -->
 
-      <section class="section-pad">
+      <section class="section-padding">
         <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow"
-              ><span class="eyebrow-dot"></span> THE CITY REIMAGINED</span
-            >
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <div class="section-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85"
+                  alt="Contemporary urban architecture"
+                  class="section-image"
+                  loading="lazy"
+                />
+
+                <div class="image-label">
+                  <span class="status-dot"></span>
+
+                  URBAN LIFE REIMAGINED
+                </div>
+
+                <div class="image-corner-mark">CITIES / 2050</div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <p class="section-eyebrow">THE NEXT GENERATION OF CITIES</p>
+
+              <h2 class="section-title">
+                MORE THAN<br />
+
+                <span>CONCRETE AND STEEL.</span>
+              </h2>
+
+              <p class="section-description">
+                The cities of tomorrow could be designed to use resources more
+                efficiently, improve public services and create healthier spaces
+                for people to live and work.
+              </p>
+
+              <p class="section-description">
+                Connected systems can help cities understand traffic, energy
+                demand and environmental conditions. But a truly smart city must
+                also be accessible, inclusive and welcoming.
+              </p>
+
+              <a href="#city-features" class="btn future-btn mt-3">
+                Explore City Features
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CITY FEATURES -->
+
+      <section class="section-padding pillars-section" id="city-features">
+        <div class="container">
+          <div class="section-heading text-center">
+            <p class="section-eyebrow">THE SMART CITY ECOSYSTEM</p>
 
             <h2 class="section-title">
-              A city should work<br /><span class="muted-title"
-                >with its people.</span
-              >
+              DESIGNED FOR <span>BETTER LIVING.</span>
             </h2>
 
-            <p class="muted max-copy">
-              Future cities may connect technology, nature and public spaces to
-              make daily life more comfortable and sustainable.
+            <p class="section-description mx-auto">
+              Explore the technologies and ideas that could help tomorrow's
+              cities become more sustainable and connected.
             </p>
           </div>
 
           <div class="row g-4 mt-3">
-            <div class="col-md-6 col-lg-4 reveal">
-              <article class="principle-card city-principle">
-                <span class="signal-icon"
-                  ><i class="fa-solid fa-seedling"></i
-                ></span>
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-solar-panel"></i>
+                </div>
 
-                <h3>Green by default</h3>
+                <span class="card-category">01 / ENERGY</span>
+
+                <h3>Clean Energy Systems</h3>
 
                 <p>
-                  More trees, clean energy, accessible parks and buildings
-                  designed to use resources wisely.
+                  Solar power, wind energy and smarter electricity networks can
+                  help cities reduce their reliance on fossil fuels.
                 </p>
 
-                <span class="card-index">01 / NATURE</span>
+                <a href="technology.html" class="card-link">
+                  Explore technology <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4 reveal delay-1">
-              <article class="principle-card city-principle">
-                <span class="signal-icon"
-                  ><i class="fa-solid fa-network-wired"></i
-                ></span>
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-building"></i>
+                </div>
 
-                <h3>Connected systems</h3>
+                <span class="card-category">02 / ARCHITECTURE</span>
+
+                <h3>Intelligent Buildings</h3>
 
                 <p>
-                  Public services and infrastructure that share useful
-                  information while respecting privacy.
+                  Connected building systems can help manage lighting,
+                  temperature and energy use while improving comfort.
                 </p>
 
-                <span class="card-index">02 / CONNECTION</span>
+                <a href="vision.html" class="card-link">
+                  Discover our vision <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </article>
             </div>
 
-            <div class="col-md-6 col-lg-4 reveal delay-2">
-              <article class="principle-card city-principle">
-                <span class="signal-icon"
-                  ><i class="fa-solid fa-people-roof"></i
-                ></span>
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-tree"></i>
+                </div>
 
-                <h3>Made for people</h3>
+                <span class="card-category">03 / NATURE</span>
+
+                <h3>Green Urban Spaces</h3>
 
                 <p>
-                  Safer streets, inclusive spaces and useful places to meet,
-                  learn, work and relax.
+                  Parks, green roofs and tree-lined streets can support
+                  biodiversity and make urban areas more enjoyable.
                 </p>
 
-                <span class="card-index">03 / COMMUNITY</span>
+                <a href="#green-living" class="card-link">
+                  Explore green living <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <span class="card-category">04 / CONNECTIVITY</span>
+
+                <h3>Connected Infrastructure</h3>
+
+                <p>
+                  Sensors and digital networks could help city services respond
+                  more effectively to changing conditions.
+                </p>
+
+                <a href="technology.html" class="card-link">
+                  Discover connected tech
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-recycle"></i>
+                </div>
+
+                <span class="card-category">05 / RESOURCES</span>
+
+                <h3>Smarter Resource Use</h3>
+
+                <p>
+                  Better waste collection, recycling and water management can
+                  help reduce pressure on limited resources.
+                </p>
+
+                <a href="vision.html" class="card-link">
+                  Explore our vision <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <article class="future-card city-feature-card">
+                <div class="city-feature-icon">
+                  <i class="fa-solid fa-wheelchair-move"></i>
+                </div>
+
+                <span class="card-category">06 / ACCESSIBILITY</span>
+
+                <h3>People-First Design</h3>
+
+                <p>
+                  Accessible public spaces, reliable services and safer walking
+                  routes can help more people participate in city life.
+                </p>
+
+                <a href="mobility.html" class="card-link">
+                  Explore mobility <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CITY IMAGE FEATURE -->
+      <!-- GREEN CITY FEATURE -->
 
-      <section class="section-pad section-dark">
+      <section class="feature-section" id="green-living">
         <div class="container">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6 reveal">
-              <div class="editorial-image">
+            <div class="col-lg-6">
+              <div class="feature-image-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=90"
-                  alt="Contemporary architecture with geometric lines"
+                  src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85"
+                  alt="Modern architecture with geometric design"
                   loading="lazy"
                 />
 
-                <span class="image-caption">DESIGNING THE EVERYDAY</span>
+                <div class="feature-image-caption">
+                  <span class="status-dot"></span>
+
+                  DESIGNING WITH PURPOSE
+                </div>
               </div>
             </div>
 
-            <div class="col-lg-6 reveal delay-1">
-              <span class="eyebrow"
-                ><span class="eyebrow-dot"></span> URBAN DESIGN</span
-              >
+            <div class="col-lg-6">
+              <p class="section-eyebrow">A GREENER URBAN FUTURE</p>
 
               <h2 class="section-title">
-                The future is not just taller buildings.
+                LET NATURE<br />
+
+                <span>BE PART OF THE CITY.</span>
               </h2>
 
-              <p class="muted">
-                A successful city is measured by how it feels to live there.
-                Clean air, reliable transport, welcoming public spaces and
-                access to essential services can matter as much as its skyline.
+              <p class="section-description">
+                Sustainable urban planning is about more than adding technology.
+                It also means protecting natural spaces, making walking easier
+                and using energy and water wisely.
               </p>
 
-              <div class="feature-list mt-4">
-                <div>
-                  <i class="fa-solid fa-check"></i
-                  ><span>Walkable neighbourhoods and safer streets</span>
+              <div class="feature-list">
+                <div class="feature-list-item">
+                  <span class="feature-check">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+
+                  <div>
+                    <h4>Green Architecture</h4>
+
+                    <p>Buildings designed with energy efficiency in mind.</p>
+                  </div>
                 </div>
 
-                <div>
-                  <i class="fa-solid fa-check"></i
-                  ><span>Buildings designed for energy efficiency</span>
+                <div class="feature-list-item">
+                  <span class="feature-check">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
+
+                  <div>
+                    <h4>Cleaner Transportation</h4>
+
+                    <p>
+                      More options for public transport, cycling and walking.
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <i class="fa-solid fa-check"></i
-                  ><span>Public spaces that welcome everyone</span>
-                </div>
+                <div class="feature-list-item">
+                  <span class="feature-check">
+                    <i class="fa-solid fa-check"></i>
+                  </span>
 
-                <div>
-                  <i class="fa-solid fa-check"></i
-                  ><span>Technology that solves real problems</span>
+                  <div>
+                    <h4>Healthier Public Spaces</h4>
+
+                    <p>
+                      Places where communities can meet and spend time outdoors.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <a class="btn-primary-glow mt-4" href="vision.html"
-                >Explore our vision <i class="fa-solid fa-arrow-right ms-2"></i
-              ></a>
+              <a href="mobility.html" class="btn future-btn mt-3">
+                Explore Future Mobility
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CITY CONCEPTS -->
+      <!-- SMART CITY EXPERIENCE -->
 
-      <section class="section-pad">
+      <section class="section-padding city-experience-section">
         <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow"
-              ><span class="eyebrow-dot"></span> POSSIBLE DISTRICTS</span
-            >
+          <div class="section-heading text-center">
+            <p class="section-eyebrow">A DAY IN THE CITY OF 2050</p>
 
             <h2 class="section-title">
-              One city.<br /><span class="muted-title"
-                >Many ways to thrive.</span
-              >
+              EVERYDAY LIFE, <span>REIMAGINED.</span>
             </h2>
+
+            <p class="section-description mx-auto">
+              Picture how a thoughtfully designed city might make everyday
+              routines more convenient and sustainable.
+            </p>
           </div>
 
           <div class="row g-4 mt-3">
-            <div class="col-md-6 reveal">
-              <article class="feature-card district-card">
-                <div class="feature-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85"
-                    alt="Sunlight shining through a green forest"
-                    loading="lazy"
-                  />
+            <div class="col-md-6 col-lg-3">
+              <div class="city-day-card">
+                <div class="city-day-top">
+                  <span>08:00 AM</span>
 
-                  <span class="image-label">DISTRICT 01</span>
+                  <i class="fa-solid fa-sun"></i>
                 </div>
 
-                <div class="feature-body">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-tree"></i>
-                  </div>
+                <h3>A Smarter Morning</h3>
 
-                  <h3>The green quarter</h3>
-
-                  <p>
-                    A neighbourhood where nature is part of daily life, from
-                    shaded streets to shared gardens.
-                  </p>
-                </div>
-              </article>
+                <p>
+                  Connected home systems help manage lighting, temperature and
+                  daily routines.
+                </p>
+              </div>
             </div>
 
-            <div class="col-md-6 reveal delay-1">
-              <article class="feature-card district-card">
-                <div class="feature-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
-                    alt="Bright modern collaborative workspace"
-                    loading="lazy"
-                  />
+            <div class="col-md-6 col-lg-3">
+              <div class="city-day-card">
+                <div class="city-day-top">
+                  <span>09:30 AM</span>
 
-                  <span class="image-label">DISTRICT 02</span>
+                  <i class="fa-solid fa-train-subway"></i>
                 </div>
 
-                <div class="feature-body">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-lightbulb"></i>
-                  </div>
+                <h3>Seamless Travel</h3>
 
-                  <h3>The ideas quarter</h3>
+                <p>
+                  Digital travel information helps people compare public
+                  transport routes and travel options.
+                </p>
+              </div>
+            </div>
 
-                  <p>
-                    A place for learning, creative work, small businesses and
-                    people exchanging new ideas.
-                  </p>
+            <div class="col-md-6 col-lg-3">
+              <div class="city-day-card">
+                <div class="city-day-top">
+                  <span>01:00 PM</span>
+
+                  <i class="fa-solid fa-tree"></i>
                 </div>
-              </article>
+
+                <h3>Time in Nature</h3>
+
+                <p>
+                  Green public spaces offer room to relax, exercise and connect
+                  with others.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="city-day-card">
+                <div class="city-day-top">
+                  <span>06:00 PM</span>
+
+                  <i class="fa-solid fa-city"></i>
+                </div>
+
+                <h3>A Connected Evening</h3>
+
+                <p>
+                  Efficient public services help communities make better use of
+                  shared spaces and resources.
+                </p>
+              </div>
             </div>
           </div>
+
+          <p class="timeline-disclaimer">
+            <i class="fa-solid fa-circle-info me-2"></i>
+
+            These examples are possible future scenarios, not predictions or
+            guarantees about life in 2050.
+          </p>
         </div>
       </section>
 
       <!-- CALL TO ACTION -->
 
-      <section class="section-pad section-dark">
+      <section class="vision-cta-section">
         <div class="container">
-          <div class="cta-panel reveal">
-            <span class="eyebrow"
-              ><span class="eyebrow-dot"></span> YOUR FUTURE, YOUR VOICE</span
-            >
+          <div class="vision-cta-box">
+            <p class="section-eyebrow">THE CITY OF TOMORROW STARTS TODAY</p>
 
-            <h2 class="section-title">
-              What should your city<br /><span class="gradient-text"
-                >look like in 2050?</span
-              >
+            <h2>
+              BETTER CITIES.<br />
+
+              <span>BETTER POSSIBILITIES.</span>
             </h2>
 
-            <p class="muted">
-              Every better future begins with a thoughtful question and a
-              willingness to work together.
+            <p>
+              Explore how technology could transform the way we move, connect
+              and experience the world around us.
             </p>
 
-            <a href="contact.html" class="btn-primary-glow"
-              >Share your ideas <i class="fa-solid fa-arrow-right ms-2"></i
-            ></a>
+            <div class="hero-buttons justify-content-center">
+              <a href="mobility.html" class="btn future-btn">
+                Explore Mobility
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </a>
+
+              <a href="technology.html" class="btn future-btn-outline">
+                Discover Technology
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- NEWSLETTER -->
-
-    <section class="newsletter-section section-pad">
-      <div class="container">
-        <div class="newsletter-panel reveal">
-          <div class="newsletter-orb"></div>
-
-          <div class="row align-items-center g-4 position-relative">
-            <div class="col-lg-7">
-              <span class="eyebrow"
-                ><span class="eyebrow-dot"></span> THE FUTURE, DELIVERED</span
-              >
-
-              <h2 class="section-title mb-2">
-                Tomorrow looks <span class="gradient-text">interesting.</span>
-              </h2>
-
-              <p class="muted mb-0">
-                Get a monthly signal on ideas shaping the world ahead.
-              </p>
-            </div>
-
-            <div class="col-lg-5">
-              <form class="newsletter-form" id="newsletterForm" novalidate>
-                <label class="visually-hidden" for="newsletterEmail"
-                  >Email address</label
-                >
-
-                <input
-                  type="email"
-                  id="newsletterEmail"
-                  placeholder="Your email address"
-                  required
-                />
-
-                <button type="submit" aria-label="Subscribe">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-
-                <small
-                  class="newsletter-feedback"
-                  id="newsletterFeedback"
-                  aria-live="polite"
-                ></small>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
 
-    <footer class="site-footer">
+    <footer class="future-footer">
       <div class="container">
-        <div class="row g-5 pb-5">
-          <div class="col-lg-5">
-            <a class="navbar-brand fx-brand footer-brand" href="index.html">
-              <span class="brand-mark"
-                ><span></span><span></span><span></span
-              ></span>
+        <div class="row g-5 footer-main">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-logo" href="index.html"> FUTURE<span>X</span> </a>
 
-              <span
-                >Future<span class="brand-accent">X</span
-                ><small>DESIGNING TOMORROW</small></span
-              >
-            </a>
-
-            <p class="footer-intro mt-4">
-              A curious look at the cities, systems and human ideas that could
-              shape life in 2050.
+            <p class="footer-about">
+              Exploring the possibilities of life in 2050 through technology,
+              sustainable thinking and human imagination.
             </p>
 
-            <div class="social-links mt-4">
+            <div class="footer-socials">
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
 
               <a
                 href="https://www.linkedin.com/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
 
               <a
                 href="https://www.youtube.com/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
 
               <a
                 href="https://x.com/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="X"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col-6 col-lg-2 offset-lg-1">
-            <h6 class="footer-heading">Explore</h6>
+          <div class="col-6 col-lg-2 col-md-3">
+            <h4 class="footer-heading">Explore</h4>
 
-            <a class="footer-link" href="vision.html">Our vision</a>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
 
-            <a class="footer-link" href="cities.html">Future cities</a>
+              <li><a href="vision.html">Our Vision</a></li>
 
-            <a class="footer-link" href="mobility.html">Mobility</a>
+              <li><a href="cities.html">Smart Cities</a></li>
 
-            <a class="footer-link" href="technology.html">Technology</a>
+              <li><a href="mobility.html">Mobility</a></li>
+            </ul>
           </div>
 
-          <div class="col-6 col-lg-2">
-            <h6 class="footer-heading">Discover</h6>
+          <div class="col-6 col-lg-2 col-md-3">
+            <h4 class="footer-heading">Discover</h4>
 
-            <a class="footer-link" href="index.html#signals">Key signals</a>
+            <ul class="footer-links">
+              <li><a href="technology.html">Technology</a></li>
 
-            <a class="footer-link" href="index.html#gallery">Visual journal</a>
+              <li><a href="contact.html">Contact Us</a></li>
 
-            <a class="footer-link" href="contact.html">Get in touch</a>
+              <li><a href="vision.html">Our Values</a></li>
+
+              <li><a href="index.html#future-world">FutureX Home</a></li>
+            </ul>
           </div>
 
-          <div class="col-lg-2">
-            <span class="footer-heading">A thought for tomorrow</span>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="footer-heading">A Better Tomorrow</h4>
 
-            <p class="footer-quote">
-              “The future is built by the questions we ask today.”
+            <p class="footer-about">
+              Big changes begin with small ideas. Keep exploring and imagine
+              what the next generation can achieve.
             </p>
+
+            <a href="contact.html" class="footer-contact-link">
+              Let's connect
+              <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+            </a>
           </div>
         </div>
 
-        <div
-          class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2"
-        >
-          <span
-            >© <span id="currentYear"></span> FutureX Studio. All rights
-            reserved.</span
-          >
+        <div class="footer-bottom">
+          <p>
+            © <span id="currentYear">2026</span> FutureX. All rights reserved.
+          </p>
 
-          <span>Imagining responsibly. Building thoughtfully.</span>
+          <p>DESIGNED FOR TOMORROW <span class="footer-star">✦</span></p>
         </div>
       </div>
     </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <button
+      id="backToTop"
+      class="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <div
-      class="toast-message"
       id="toastMessage"
+      class="future-toast"
       role="status"
       aria-live="polite"
     ></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="main.js"></script>
   </body>
