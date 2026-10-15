@@ -8,76 +8,66 @@
 
     <meta
       name="description"
-      content="Contact FutureX to discuss the future of technology, smart cities, and innovation."
+      content="Contact FutureX to share your ideas about technology, smart cities, mobility and life in 2050."
     />
 
-    <title>Contact Us | FutureX</title>
-
-    <!-- Bootstrap 5 -->
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome -->
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-
-    <!-- Google Fonts -->
+    <title>Contact | FutureX — Life in 2050</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Main CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg future-navbar">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">
-          <span class="brand-icon"><i class="fa-solid fa-atom"></i></span>
-
-          Future<span class="brand-highlight">X</span>
+        <a class="navbar-brand future-logo" href="index.html">
+          <span class="logo-mark">F</span> FUTURE<span>X</span>
         </a>
 
         <button
-          class="navbar-toggler"
+          class="navbar-toggler future-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
+          data-bs-target="#futureNavbar"
+          aria-controls="futureNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="collapse navbar-collapse" id="futureNavbar">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="vision.html">Our Vision</a>
+              <a class="nav-link" href="vision.html">Vision</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="cities.html">Future Cities</a>
+              <a class="nav-link" href="cities.html">Smart Cities</a>
             </li>
 
             <li class="nav-item">
@@ -94,9 +84,12 @@
               >
             </li>
 
-            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-              <a class="btn btn-primary-custom" href="#contact-form">
-                Get in Touch <i class="fa-solid fa-arrow-right ms-2"></i>
+            <li class="nav-item ms-lg-3">
+              <a
+                href="#contact-form-section"
+                class="btn future-btn future-btn-small"
+              >
+                Get In Touch <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
             </li>
           </ul>
@@ -104,417 +97,581 @@
       </div>
     </nav>
 
-    <!-- Contact Hero -->
+    <main>
+      <!-- Hero -->
 
-    <header class="page-hero contact-hero">
-      <div class="hero-overlay"></div>
+      <section class="inner-hero contact-hero">
+        <div class="inner-hero-overlay"></div>
 
-      <div class="container position-relative">
-        <div class="row align-items-center min-vh-50">
-          <div class="col-lg-8">
-            <span class="section-label">
-              <i class="fa-regular fa-paper-plane me-2"></i>
+        <div class="container inner-hero-content">
+          <div class="section-eyebrow"><span></span> LET'S CONNECT</div>
 
-              LET'S CONNECT
-            </span>
+          <h1 class="inner-hero-title">
+            LET'S TALK<br />
 
-            <h1 class="display-3 fw-bold mt-3">
-              Build the <span class="text-gradient">Future</span> With Us
-            </h1>
+            <span>ABOUT TOMORROW.</span>
+          </h1>
 
-            <p class="lead mt-4">
-              Have an idea, a question, or a vision for tomorrow? We would love
-              to hear from you.
-            </p>
-
-            <a href="#contact-form" class="btn btn-primary-custom mt-3">
-              Contact Our Team
-
-              <i class="fa-solid fa-arrow-down ms-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Contact Information -->
-
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-heading text-center mb-5">
-          <span class="section-label">GET IN TOUCH</span>
-
-          <h2>We Are Here to <span class="text-gradient">Help</span></h2>
-
-          <p>Connect with us and let's explore new possibilities together.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <div class="info-icon">
-                <i class="fa-regular fa-envelope"></i>
-              </div>
-
-              <h4>Email Us</h4>
-
-              <p>Send us your questions and ideas.</p>
-
-              <a href="mailto:hello@futurex.example"> hello@futurex.example </a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <div class="info-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-
-              <h4>Our Vision</h4>
-
-              <p>
-                We believe innovation can create a better world for everyone.
-              </p>
-
-              <a href="vision.html">Discover Our Vision</a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="info-card h-100">
-              <div class="info-icon">
-                <i class="fa-regular fa-clock"></i>
-              </div>
-
-              <h4>Working Together</h4>
-
-              <p>
-                Have a project idea? Let's start a conversation about what's
-                possible.
-              </p>
-
-              <a href="#contact-form">Start a Conversation</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form -->
-
-    <section class="section-padding contact-section" id="contact-form">
-      <div class="container">
-        <div class="row g-5 align-items-start">
-          <div class="col-lg-5">
-            <span class="section-label">SEND A MESSAGE</span>
-
-            <h2 class="section-title mt-3">
-              Your Ideas Can Shape <span class="text-gradient">Tomorrow</span>
-            </h2>
-
-            <p class="section-description mt-4">
-              Every great innovation starts with an idea. Tell us what you are
-              thinking about, and let's explore the possibilities together.
-            </p>
-
-            <div class="contact-benefit mt-4">
-              <i class="fa-solid fa-check-circle"></i>
-
-              <span>Share your ideas and questions</span>
-            </div>
-
-            <div class="contact-benefit">
-              <i class="fa-solid fa-check-circle"></i>
-
-              <span>Discuss technology and innovation</span>
-            </div>
-
-            <div class="contact-benefit">
-              <i class="fa-solid fa-check-circle"></i>
-
-              <span>Explore future-focused projects</span>
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <div class="contact-form-card">
-              <form id="contactForm" novalidate>
-                <div class="row g-4">
-                  <div class="col-md-6">
-                    <label for="contactName" class="form-label">
-                      Full Name
-                    </label>
-
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="contactName"
-                      name="name"
-                      placeholder="Enter your name"
-                      required
-                    />
-
-                    <div class="invalid-feedback">Please enter your name.</div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="contactEmail" class="form-label">
-                      Email Address
-                    </label>
-
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="contactEmail"
-                      name="email"
-                      placeholder="name@example.com"
-                      required
-                    />
-
-                    <div class="invalid-feedback">
-                      Please enter a valid email address.
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <label for="contactSubject" class="form-label">
-                      Subject
-                    </label>
-
-                    <select
-                      class="form-select"
-                      id="contactSubject"
-                      name="subject"
-                      required
-                    >
-                      <option value="" selected disabled>Choose a topic</option>
-
-                      <option value="technology">Future Technology</option>
-
-                      <option value="smart-cities">Smart Cities</option>
-
-                      <option value="mobility">Future Mobility</option>
-
-                      <option value="collaboration">
-                        Project Collaboration
-                      </option>
-
-                      <option value="other">Other</option>
-                    </select>
-
-                    <div class="invalid-feedback">Please choose a subject.</div>
-                  </div>
-
-                  <div class="col-12">
-                    <label for="contactMessage" class="form-label">
-                      Your Message
-                    </label>
-
-                    <textarea
-                      class="form-control"
-                      id="contactMessage"
-                      name="message"
-                      rows="5"
-                      placeholder="Tell us about your idea..."
-                      required
-                    ></textarea>
-
-                    <div class="invalid-feedback">
-                      Please write your message.
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary-custom w-100">
-                      Send Message
-
-                      <i class="fa-solid fa-paper-plane ms-2"></i>
-                    </button>
-
-                    <p class="form-note mt-3 mb-0">
-                      <i class="fa-solid fa-circle-info me-2"></i>
-
-                      This demo form does not send messages to a real inbox.
-                    </p>
-
-                    <div
-                      id="contactFeedback"
-                      class="form-feedback mt-3"
-                      role="status"
-                      aria-live="polite"
-                    ></div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-
-    <section class="cta-section section-padding">
-      <div class="container">
-        <div class="cta-content text-center">
-          <span class="section-label">THE FUTURE STARTS NOW</span>
-
-          <h2 class="mt-3">
-            Ready to Think <span class="text-gradient">Beyond Today?</span>
-          </h2>
-
-          <p>
-            Discover the ideas and technologies that could shape the world of
-            tomorrow.
+          <p class="inner-hero-description">
+            Have an idea about the future? We would love to hear it. Share your
+            thoughts, questions and vision for a better 2050.
           </p>
 
-          <a href="technology.html" class="btn btn-primary-custom mt-3">
-            Explore Technology
+          <a href="#contact-form-section" class="btn future-btn mt-3">
+            Start a Conversation
 
-            <i class="fa-solid fa-arrow-right ms-2"></i>
+            <i class="fa-solid fa-arrow-down ms-2"></i>
           </a>
+
+          <div class="breadcrumb-future mt-4">
+            <a href="index.html">Home</a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <span>Contact</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Newsletter -->
+      <!-- Contact Introduction -->
 
-    <section class="newsletter-section">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <span class="section-label">STAY AHEAD</span>
+      <section class="section-padding contact-intro">
+        <div class="container">
+          <div class="text-center section-heading">
+            <div class="section-eyebrow justify-content-center">
+              <span></span> CONNECT WITH FUTUREX
+            </div>
 
-            <h3 class="mt-2">Get Future Updates</h3>
+            <h2 class="section-title">
+              EVERY GREAT IDEA<br />
 
-            <p class="mb-lg-0">
-              Explore new ideas, discoveries, and future trends.
+              <span>STARTS WITH A CONVERSATION.</span>
+            </h2>
+
+            <p class="section-description mx-auto">
+              Whether you are curious about emerging technology, smart cities or
+              life in 2050, this is the place to share your thoughts and connect
+              with our project.
             </p>
           </div>
 
-          <div class="col-lg-6">
-            <form id="newsletterForm" class="newsletter-form">
-              <div class="input-group">
-                <input
-                  type="email"
-                  id="newsletterEmail"
-                  class="form-control"
-                  placeholder="Enter your email address"
-                  aria-label="Email address"
-                  required
-                />
+          <div class="row g-4 mt-3">
+            <div class="col-md-4">
+              <div class="vision-info-card contact-info-card h-100">
+                <div class="vision-card-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
 
-                <button class="btn btn-primary-custom" type="submit">
-                  Subscribe
-                </button>
+                <span class="vision-card-number">01 — EMAIL</span>
+
+                <h3>Send a Message</h3>
+
+                <p>
+                  Have a question or suggestion? Send us an email and share what
+                  is on your mind.
+                </p>
+
+                <a href="mailto:hello@futurex.example" class="card-link">
+                  Email Us <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
+            </div>
 
-              <div
-                id="newsletterFeedback"
-                class="form-feedback mt-2"
-                role="status"
-                aria-live="polite"
-              ></div>
-            </form>
+            <div class="col-md-4">
+              <div class="vision-info-card contact-info-card h-100">
+                <div class="vision-card-icon">
+                  <i class="fa-regular fa-lightbulb"></i>
+                </div>
+
+                <span class="vision-card-number">02 — IDEAS</span>
+
+                <h3>Share Your Vision</h3>
+
+                <p>
+                  Tell us which future innovations excite you and what you hope
+                  the world will become.
+                </p>
+
+                <a href="#contact-form-section" class="card-link">
+                  Share an Idea <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="vision-info-card contact-info-card h-100">
+                <div class="vision-card-icon">
+                  <i class="fa-solid fa-earth-europe"></i>
+                </div>
+
+                <span class="vision-card-number">03 — COMMUNITY</span>
+
+                <h3>Think Beyond Today</h3>
+
+                <p>
+                  Explore our vision for future cities, sustainable mobility and
+                  emerging technology.
+                </p>
+
+                <a href="vision.html" class="card-link">
+                  Explore FutureX <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Contact Form -->
+
+      <section
+        class="section-padding contact-form-section"
+        id="contact-form-section"
+      >
+        <div class="container">
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-5">
+              <div class="section-eyebrow">
+                <span></span> YOUR VOICE MATTERS
+              </div>
+
+              <h2 class="section-title">
+                LET'S BUILD<br />
+
+                <span>WHAT'S NEXT.</span>
+              </h2>
+
+              <p class="section-description">
+                The future is shaped by the questions we ask and the ideas we
+                share. Use the form to tell us what you think.
+              </p>
+
+              <div class="contact-side-note mt-4">
+                <div class="contact-side-icon">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>“The best way to predict the future is to create it.”</p>
+
+                <span>THINK. IMAGINE. CREATE.</span>
+              </div>
+
+              <div class="contact-mini-details mt-4">
+                <div class="contact-mini-item">
+                  <i class="fa-solid fa-globe"></i>
+
+                  <span>A project about life in 2050</span>
+                </div>
+
+                <div class="contact-mini-item">
+                  <i class="fa-solid fa-lightbulb"></i>
+
+                  <span>Ideas, questions and suggestions welcome</span>
+                </div>
+
+                <div class="contact-mini-item">
+                  <i class="fa-solid fa-rocket"></i>
+
+                  <span>Designed for tomorrow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="contact-form-card">
+                <div class="contact-form-heading">
+                  <span class="card-category">CONTACT FUTUREX</span>
+
+                  <h3>Send Us a Message</h3>
+
+                  <p>Fill in the details below to prepare your message.</p>
+                </div>
+
+                <form id="contactForm">
+                  <div class="row g-4">
+                    <div class="col-md-6">
+                      <label for="contactName" class="form-label">
+                        Your Name
+                      </label>
+
+                      <input
+                        type="text"
+                        class="form-control future-input"
+                        id="contactName"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="contactEmail" class="form-label">
+                        Email Address
+                      </label>
+
+                      <input
+                        type="email"
+                        class="form-control future-input"
+                        id="contactEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="contactSubject" class="form-label">
+                        Subject
+                      </label>
+
+                      <select
+                        class="form-select future-input"
+                        id="contactSubject"
+                        name="subject"
+                        required
+                      >
+                        <option value="" selected disabled>
+                          Choose a topic
+                        </option>
+
+                        <option value="Technology">Future Technology</option>
+
+                        <option value="Smart Cities">Smart Cities</option>
+
+                        <option value="Mobility">Future Mobility</option>
+
+                        <option value="Collaboration">
+                          Project Collaboration
+                        </option>
+
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="contactMessage" class="form-label">
+                        Your Message
+                      </label>
+
+                      <textarea
+                        class="form-control future-input future-textarea"
+                        id="contactMessage"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us your idea about the future..."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12">
+                      <button
+                        type="submit"
+                        class="btn future-btn contact-submit-btn"
+                      >
+                        Prepare Message
+
+                        <i class="fa-solid fa-arrow-right ms-2"></i>
+                      </button>
+
+                      <p
+                        id="contactFeedback"
+                        class="form-feedback mt-3"
+                        role="status"
+                        aria-live="polite"
+                      ></p>
+
+                      <p class="contact-form-note">
+                        <i class="fa-solid fa-circle-info me-2"></i>
+
+                        This demonstration form does not send data to a server.
+                        Your message can be prepared in your email app.
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+
+      <section class="section-padding contact-faq-section">
+        <div class="container">
+          <div class="text-center section-heading">
+            <div class="section-eyebrow justify-content-center">
+              <span></span> QUICK ANSWERS
+            </div>
+
+            <h2 class="section-title">
+              A FEW THINGS<br />
+
+              <span>YOU MIGHT WONDER.</span>
+            </h2>
+          </div>
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-lg-9">
+              <div class="accordion future-accordion" id="contactFAQ">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqOne"
+                      aria-expanded="true"
+                      aria-controls="faqOne"
+                    >
+                      What is FutureX?
+                    </button>
+                  </h3>
+
+                  <div
+                    id="faqOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#contactFAQ"
+                  >
+                    <div class="accordion-body">
+                      FutureX is a website project exploring possible ways
+                      people may live, travel and use technology in the year
+                      2050.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo"
+                      aria-expanded="false"
+                      aria-controls="faqTwo"
+                    >
+                      Are the technologies on this website guaranteed to exist
+                      by 2050?
+                    </button>
+                  </h3>
+
+                  <div
+                    id="faqTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#contactFAQ"
+                  >
+                    <div class="accordion-body">
+                      No. These pages explore possibilities and informed ideas
+                      about the future. Actual developments may be different.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqThree"
+                      aria-expanded="false"
+                      aria-controls="faqThree"
+                    >
+                      Can I share an idea or suggestion?
+                    </button>
+                  </h3>
+
+                  <div
+                    id="faqThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#contactFAQ"
+                  >
+                    <div class="accordion-body">
+                      Yes. You can prepare a message using the contact form
+                      above. Sending it requires an email app or a connected
+                      form service.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqFour"
+                      aria-expanded="false"
+                      aria-controls="faqFour"
+                    >
+                      Does the contact form send my message automatically?
+                    </button>
+                  </h3>
+
+                  <div
+                    id="faqFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#contactFAQ"
+                  >
+                    <div class="accordion-body">
+                      Not yet. This is a front-end demonstration. We will use
+                      JavaScript to prepare the message, but automatic delivery
+                      requires a backend or a form service.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+
+      <section class="section-padding vision-cta-section">
+        <div class="container">
+          <div class="vision-cta-box">
+            <div class="section-eyebrow"><span></span> THE FUTURE IS OPEN</div>
+
+            <h2 class="section-title">
+              KEEP LOOKING<br />
+
+              <span>BEYOND TODAY.</span>
+            </h2>
+
+            <p class="section-description">
+              Explore the ideas that could transform tomorrow and imagine your
+              place in the world of 2050.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="index.html" class="btn future-btn">
+                Back to Home <i class="fa-solid fa-arrow-right ms-2"></i>
+              </a>
+
+              <a href="technology.html" class="btn future-btn-outline">
+                Explore Technology
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
 
-    <footer class="site-footer">
+    <footer class="future-footer">
       <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <a class="footer-brand" href="index.html">
-              <i class="fa-solid fa-atom me-2"></i>
-
-              Future<span class="brand-highlight">X</span>
-            </a>
-
-            <p class="footer-description mt-3">
-              Exploring the ideas, technologies, and innovations shaping the
-              world of tomorrow.
-            </p>
-
-            <div class="social-links">
-              <a href="#" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
+        <div class="footer-main">
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <a class="footer-logo future-logo" href="index.html">
+                <span class="logo-mark">F</span> FUTURE<span>X</span>
               </a>
 
-              <a href="#" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+              <p class="footer-about">
+                A glimpse into life in 2050 — exploring the ideas, innovations
+                and possibilities shaping tomorrow's world.
+              </p>
 
-              <a href="#" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
+              <div class="footer-socials">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <h3 class="footer-heading">EXPLORE</h3>
+
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="vision.html">Our Vision</a></li>
+
+                <li><a href="cities.html">Smart Cities</a></li>
+
+                <li><a href="mobility.html">Mobility</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <h3 class="footer-heading">DISCOVER</h3>
+
+              <ul class="footer-links">
+                <li><a href="technology.html">Technology</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+                <li><a href="vision.html">Our Future</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4">
+              <h3 class="footer-heading">THE NEXT CHAPTER</h3>
+
+              <p class="footer-about">
+                Stay curious. Think beyond today. Help imagine a better
+                tomorrow.
+              </p>
+
+              <a href="technology.html" class="text-link">
+                Discover technology
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
             </div>
           </div>
-
-          <div class="col-lg-2 col-md-6">
-            <h5>Explore</h5>
-
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-
-              <li><a href="vision.html">Our Vision</a></li>
-
-              <li><a href="cities.html">Future Cities</a></li>
-
-              <li><a href="mobility.html">Mobility</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h5>Discover</h5>
-
-            <ul class="footer-links">
-              <li><a href="technology.html">Technology</a></li>
-
-              <li><a href="contact.html">Contact Us</a></li>
-
-              <li><a href="#newsletterForm">Newsletter</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h5>Our Mission</h5>
-
-            <p class="footer-description">
-              Inspiring people to imagine a smarter, more connected, and more
-              sustainable future.
-            </p>
-          </div>
         </div>
 
-        <div class="footer-bottom mt-5 pt-4">
-          <p class="mb-0">
-            &copy; <span id="currentYear"></span> FutureX. All rights reserved.
+        <div class="footer-bottom">
+          <p>
+            © <span id="currentYear">2026</span> FutureX. All rights reserved.
           </p>
 
-          <a href="#" id="backToTop" aria-label="Back to top">
-            Back to Top <i class="fa-solid fa-arrow-up ms-1"></i>
-          </a>
+          <p>DESIGNED FOR TOMORROW <span class="footer-star">✦</span></p>
         </div>
       </div>
     </footer>
 
-    <!-- Toast Message -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <div
-      class="toast-message"
       id="toastMessage"
+      class="future-toast"
       role="status"
       aria-live="polite"
     ></div>
 
-    <!-- Bootstrap JavaScript -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Main JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="main.js"></script>
   </body>
