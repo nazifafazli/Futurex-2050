@@ -6,58 +6,70 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Future Mobility | FutureX</title>
+
     <meta
       name="description"
-      content="Explore the future of mobility with FutureX: electric vehicles, autonomous transportation and smarter ways to travel in 2050."
+      content="Explore electric vehicles, intelligent transportation, autonomous mobility and sustainable ways to travel."
     />
 
-    <title>Future Mobility | FutureX</title>
+    <!-- Google Fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap 5 -->
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
+    <!-- Font Awesome -->
+
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- Shared CSS -->
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <!-- NAVBAR -->
+  <body id="top">
+    <!-- =========================
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top future-navbar">
+         NAVBAR
+
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top fx-navbar">
       <div class="container">
-        <a class="navbar-brand future-logo" href="index.html">
-          FUTURE<span>X</span><small> LIFE IN 2050</small>
+        <a class="navbar-brand fx-logo" href="index.html">
+          Future<span>X</span>
         </a>
 
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#futureNavbar"
-          aria-controls="futureNavbar"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="futureNavbar">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -67,14 +79,14 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="cities.html">Smart Cities</a>
+              <a class="nav-link" href="cities.html">Cities</a>
             </li>
 
             <li class="nav-item">
               <a
                 class="nav-link active"
-                aria-current="page"
                 href="mobility.html"
+                aria-current="page"
                 >Mobility</a
               >
             </li>
@@ -86,123 +98,195 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-
-            <li class="nav-item ms-lg-2">
-              <a class="btn future-btn future-btn-small" href="contact.html">
-                Let's Connect <i class="fa-solid fa-arrow-right ms-2"></i>
-              </a>
-            </li>
           </ul>
+
+          <a href="contact.html" class="btn btn-fx nav-cta">
+            Let's Connect
+
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- HERO -->
+      <!-- =========================
 
-      <section class="inner-hero mobility-hero">
+             MOBILITY HERO
+
+        ========================== -->
+
+      <section class="mobility-hero inner-hero">
+        <div class="inner-hero-bg mobility-bg"></div>
+
         <div class="inner-hero-overlay"></div>
 
-        <div class="container inner-hero-content">
-          <p class="section-eyebrow">03 / THE NEXT WAY FORWARD</p>
+        <div class="container inner-hero-container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-8">
+              <div class="breadcrumb-line reveal">
+                <a href="index.html">Home</a>
 
-          <h1 class="inner-hero-title">
-            MOVE BEYOND<br />
+                <i class="fa-solid fa-chevron-right"></i>
 
-            <span>THE ORDINARY.</span>
-          </h1>
+                <span>Mobility</span>
+              </div>
 
-          <p class="inner-hero-description">
-            Discover how electric vehicles, intelligent transport and new
-            mobility ideas could reshape the way we travel.
-          </p>
+              <span class="eyebrow reveal"> MOVE INTO TOMORROW </span>
 
-          <div class="breadcrumb-future">
-            <a href="index.html">Home</a>
+              <h1 class="inner-hero-title reveal">
+                Movement Without <span class="gradient-text">Limits.</span>
+              </h1>
 
-            <i class="fa-solid fa-chevron-right"></i>
+              <p class="inner-hero-description reveal">
+                Discover a new era of transportation, where electric mobility,
+                intelligent systems and sustainable design change the way we
+                move through the world.
+              </p>
 
-            <span>Mobility</span>
+              <div class="hero-actions reveal">
+                <a href="#mobility-solutions" class="btn btn-fx btn-lg">
+                  Explore Mobility
+
+                  <i class="fa-solid fa-arrow-down ms-2"></i>
+                </a>
+
+                <a href="technology.html" class="hero-secondary-link">
+                  Discover Innovation
+
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+
+              <div class="vision-hero-note reveal">
+                <span class="status-dot"></span>
+
+                A NEW WAY FORWARD
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="inner-hero-index">04 <span>/ 06</span></div>
       </section>
 
-      <!-- INTRODUCTION -->
+      <!-- =========================
 
-      <section class="section-padding">
+             MOBILITY INTRO
+
+        ========================== -->
+
+      <section class="section-padding mobility-intro">
         <div class="container">
           <div class="row align-items-center g-5">
             <div class="col-lg-6">
-              <div class="section-image-wrap">
+              <div class="mobility-intro-image reveal">
                 <img
                   src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85"
-                  alt="Electric vehicle charging station"
-                  class="section-image"
+                  alt="Electric vehicle charging"
                   loading="lazy"
                 />
 
-                <div class="image-label">
-                  <span class="status-dot"></span>
+                <div class="mobility-image-badge">
+                  <span class="mobility-badge-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                  </span>
 
-                  THE ELECTRIC REVOLUTION
+                  <div>
+                    <strong>Electric Future</strong>
+
+                    <p>Rethinking how we travel</p>
+                  </div>
                 </div>
-
-                <div class="image-corner-mark">MOBILITY / 2050</div>
               </div>
             </div>
 
             <div class="col-lg-6">
-              <p class="section-eyebrow">A NEW ERA OF MOVEMENT</p>
+              <div class="mobility-intro-content reveal">
+                <span class="eyebrow"> REIMAGINE THE JOURNEY </span>
 
-              <h2 class="section-title">
-                THE WAY WE MOVE<br />
+                <h2 class="section-title">
+                  The journey matters as much as the
 
-                <span>IS CHANGING.</span>
-              </h2>
+                  <span class="gradient-text">destination.</span>
+                </h2>
 
-              <p class="section-description">
-                Transportation connects people, communities and ideas. As
-                technology develops, electric vehicles, smarter public transport
-                and digital navigation may offer new ways to move around our
-                world.
-              </p>
+                <p>
+                  Transportation connects people, communities and opportunities.
+                  The next generation of mobility can make these connections
+                  smarter and more sustainable.
+                </p>
 
-              <p class="section-description">
-                The goal is not only to travel differently. It is to explore
-                transport that can be more efficient, accessible and considerate
-                of the environment.
-              </p>
+                <p>
+                  From electric vehicles to connected public transport, new
+                  ideas are opening possibilities for cleaner and more
+                  convenient journeys.
+                </p>
 
-              <a href="#mobility-solutions" class="btn future-btn mt-3">
-                Explore Mobility
+                <div class="mobility-highlights">
+                  <div class="mobility-highlight">
+                    <i class="fa-solid fa-circle-check"></i>
 
-                <i class="fa-solid fa-arrow-right ms-2"></i>
-              </a>
+                    <span>Cleaner transportation options</span>
+                  </div>
+
+                  <div class="mobility-highlight">
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Smarter connected transport systems</span>
+                  </div>
+
+                  <div class="mobility-highlight">
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>People-focused urban mobility</span>
+                  </div>
+                </div>
+
+                <a href="cities.html" class="text-link">
+                  Explore Smart Cities
+
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MOBILITY SOLUTIONS -->
+      <!-- =========================
 
-      <section class="section-padding pillars-section" id="mobility-solutions">
+             MOBILITY SOLUTIONS
+
+        ========================== -->
+
+      <section
+        class="section-padding mobility-solutions-section"
+        id="mobility-solutions"
+      >
         <div class="container">
-          <div class="section-heading text-center">
-            <p class="section-eyebrow">THE FUTURE OF TRANSPORT</p>
+          <div class="section-heading reveal">
+            <div>
+              <span class="eyebrow"> THE FUTURE OF TRANSPORT </span>
 
-            <h2 class="section-title">NEW WAYS <span>TO MOVE.</span></h2>
+              <h2>
+                Four ways to
 
-            <p class="section-description mx-auto">
-              From electric power to connected transport systems, explore the
-              ideas that may shape tomorrow's journeys.
+                <span class="gradient-text">move forward.</span>
+              </h2>
+            </div>
+
+            <p>
+              Explore emerging approaches that could transform everyday journeys
+              and transport networks.
             </p>
           </div>
 
-          <div class="row g-4 mt-3">
-            <!-- ELECTRIC VEHICLES -->
+          <div class="row g-4">
+            <!-- Electric Vehicles -->
 
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
+            <div class="col-md-6 col-xl-3">
+              <article class="mobility-card reveal">
                 <div class="mobility-card-image">
                   <img
                     src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=85"
@@ -210,176 +294,121 @@
                     loading="lazy"
                   />
 
-                  <span class="card-number">01</span>
+                  <span class="mobility-card-number">01</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">ELECTRIC POWER</span>
+                <div class="mobility-card-content">
+                  <span class="feature-category"> ELECTRIC VEHICLES </span>
 
-                  <h3>Electric Vehicles</h3>
+                  <h3>Drive a New Era</h3>
 
                   <p>
-                    Battery-powered vehicles can help reduce tailpipe emissions
-                    and support a shift toward cleaner transport.
+                    Discover electric cars and charging systems that offer
+                    alternatives to conventional transport.
                   </p>
 
-                  <a href="#electric-future" class="card-link">
-                    Discover more <i class="fa-solid fa-arrow-right"></i>
+                  <a href="#electric-mobility" class="card-link">
+                    Explore EVs
+
+                    <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
               </article>
             </div>
 
-            <!-- AUTONOMOUS TRANSPORT -->
+            <!-- Autonomous Mobility -->
 
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
+            <div class="col-md-6 col-xl-3">
+              <article class="mobility-card reveal">
                 <div class="mobility-card-image">
                   <img
-                    src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=85"
-                    alt="Modern city buildings"
+                    src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=900&q=85"
+                    alt="Modern car on a road"
                     loading="lazy"
                   />
 
-                  <span class="card-number">02</span>
+                  <span class="mobility-card-number">02</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">INTELLIGENT SYSTEMS</span>
+                <div class="mobility-card-content">
+                  <span class="feature-category"> AUTONOMOUS SYSTEMS </span>
 
-                  <h3>Autonomous Mobility</h3>
+                  <h3>Intelligent Journeys</h3>
 
                   <p>
-                    Automated driving systems are being developed to assist with
-                    navigation and vehicle control.
+                    Explore driver-assistance systems and the research behind
+                    automated transportation.
                   </p>
 
                   <a href="technology.html" class="card-link">
-                    Explore technology <i class="fa-solid fa-arrow-right"></i>
+                    Explore Intelligence
+
+                    <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
               </article>
             </div>
 
-            <!-- PUBLIC TRANSPORT -->
+            <!-- Public Transport -->
 
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
+            <div class="col-md-6 col-xl-3">
+              <article class="mobility-card reveal">
                 <div class="mobility-card-image">
                   <img
-                    src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85"
-                    alt="Public transportation bus"
+                    src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=85"
+                    alt="Passenger train travelling through the countryside"
                     loading="lazy"
                   />
 
-                  <span class="card-number">03</span>
+                  <span class="mobility-card-number">03</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">CONNECTED CITIES</span>
+                <div class="mobility-card-content">
+                  <span class="feature-category"> CONNECTED TRANSIT </span>
 
-                  <h3>Smart Public Transport</h3>
+                  <h3>Better Connections</h3>
 
                   <p>
-                    Better route information and connected services could make
-                    public transportation easier to use.
+                    Rethink rail, public transport and connected journeys
+                    between neighbourhoods and cities.
                   </p>
 
                   <a href="cities.html" class="card-link">
-                    Explore smart cities <i class="fa-solid fa-arrow-right"></i>
+                    Explore Transit
+
+                    <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
               </article>
             </div>
 
-            <!-- CHARGING NETWORKS -->
+            <!-- Sustainable Design -->
 
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
+            <div class="col-md-6 col-xl-3">
+              <article class="mobility-card reveal">
                 <div class="mobility-card-image">
                   <img
-                    src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85"
-                    alt="Electric car charging equipment"
+                    src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=85"
+                    alt="Urban transport and road infrastructure"
                     loading="lazy"
                   />
 
-                  <span class="card-number">04</span>
+                  <span class="mobility-card-number">04</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">ENERGY INFRASTRUCTURE</span>
+                <div class="mobility-card-content">
+                  <span class="feature-category"> URBAN MOBILITY </span>
 
-                  <h3>Charging Networks</h3>
+                  <h3>Designed for People</h3>
 
                   <p>
-                    Accessible charging infrastructure is an important part of
-                    supporting wider electric vehicle adoption.
-                  </p>
-
-                  <a href="technology.html" class="card-link">
-                    Explore innovation <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-            </div>
-
-            <!-- MICROMOBILITY -->
-
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
-                <div class="mobility-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=900&q=85"
-                    alt="Bicycle for everyday transportation"
-                    loading="lazy"
-                  />
-
-                  <span class="card-number">05</span>
-                </div>
-
-                <div class="future-card-body">
-                  <span class="card-category">SHORT JOURNEYS</span>
-
-                  <h3>Micro-Mobility</h3>
-
-                  <p>
-                    Cycling and other compact transport options can support
-                    convenient travel over shorter distances.
+                    Explore connected streets, walkable neighbourhoods and more
+                    accessible transport.
                   </p>
 
                   <a href="cities.html" class="card-link">
-                    Explore city design <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-            </div>
+                    Explore Urban Design
 
-            <!-- FUTURE INFRASTRUCTURE -->
-
-            <div class="col-md-6 col-xl-4">
-              <article class="future-card mobility-card">
-                <div class="mobility-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85"
-                    alt="City streets and transport infrastructure"
-                    loading="lazy"
-                  />
-
-                  <span class="card-number">06</span>
-                </div>
-
-                <div class="future-card-body">
-                  <span class="card-category">URBAN DESIGN</span>
-
-                  <h3>Future Infrastructure</h3>
-
-                  <p>
-                    Thoughtful street design and connected networks can help
-                    people reach destinations more easily.
-                  </p>
-
-                  <a href="cities.html" class="card-link">
-                    Discover smart cities
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -389,195 +418,279 @@
         </div>
       </section>
 
-      <!-- ELECTRIC FUTURE FEATURE -->
+      <!-- =========================
 
-      <section class="feature-section" id="electric-future">
+             ELECTRIC MOBILITY
+
+        ========================== -->
+
+      <section
+        class="section-padding electric-mobility-section"
+        id="electric-mobility"
+      >
         <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="feature-image-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85"
-                  alt="Electric vehicle in a modern setting"
-                  loading="lazy"
-                />
+          <div class="electric-mobility-panel reveal">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <div class="electric-image-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85"
+                    alt="Electric car charging station"
+                    loading="lazy"
+                  />
 
-                <div class="feature-image-caption">
-                  <span class="status-dot"></span>
+                  <div class="electric-image-label">
+                    <i class="fa-solid fa-plug"></i>
 
-                  POWERING NEW POSSIBILITIES
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <p class="section-eyebrow">THE ELECTRIC FUTURE</p>
-
-              <h2 class="section-title">
-                POWERED BY<br />
-
-                <span>NEW POSSIBILITIES.</span>
-              </h2>
-
-              <p class="section-description">
-                Electric mobility is one part of the changing transport
-                landscape. Its benefits depend on factors such as electricity
-                sources, battery production, vehicle use and charging access.
-              </p>
-
-              <div class="feature-list">
-                <div class="feature-list-item">
-                  <span class="feature-check">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-
-                  <div>
-                    <h4>Electric Powertrains</h4>
-
-                    <p>
-                      Vehicles powered by electricity rather than petrol alone.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="feature-list-item">
-                  <span class="feature-check">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-
-                  <div>
-                    <h4>Smarter Charging</h4>
-
-                    <p>
-                      Charging solutions designed around different travel needs.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="feature-list-item">
-                  <span class="feature-check">
-                    <i class="fa-solid fa-check"></i>
-                  </span>
-
-                  <div>
-                    <h4>Connected Vehicles</h4>
-
-                    <p>
-                      Digital features that can support navigation and
-                      information.
-                    </p>
+                    CHARGING THE FUTURE
                   </div>
                 </div>
               </div>
 
-              <a href="technology.html" class="btn future-btn mt-3">
-                Explore Future Technology
+              <div class="col-lg-6">
+                <div class="electric-content">
+                  <span class="eyebrow"> POWERED BY INNOVATION </span>
 
-                <i class="fa-solid fa-arrow-right ms-2"></i>
-              </a>
+                  <h2 class="section-title">
+                    Electric mobility.
+
+                    <span class="gradient-text">New possibilities.</span>
+                  </h2>
+
+                  <p>
+                    Electric vehicles are an important part of the transition
+                    toward lower-emission transportation. Their overall
+                    environmental impact also depends on electricity sources,
+                    manufacturing and battery life cycles.
+                  </p>
+
+                  <div class="electric-feature-list">
+                    <div class="electric-feature">
+                      <span class="electric-feature-icon">
+                        <i class="fa-solid fa-battery-full"></i>
+                      </span>
+
+                      <div>
+                        <h3>Battery Innovation</h3>
+
+                        <p>
+                          Research focused on efficiency, performance and
+                          battery recycling.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="electric-feature">
+                      <span class="electric-feature-icon">
+                        <i class="fa-solid fa-charging-station"></i>
+                      </span>
+
+                      <div>
+                        <h3>Charging Networks</h3>
+
+                        <p>
+                          More connected charging experiences for electric
+                          vehicle drivers.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="electric-feature">
+                      <span class="electric-feature-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                      </span>
+
+                      <div>
+                        <h3>Lower-Emission Travel</h3>
+
+                        <p>
+                          Opportunities to reduce transport emissions,
+                          especially with cleaner electricity.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="technology.html" class="btn btn-fx">
+                    Discover Future Technology
+
+                    <i class="fa-solid fa-arrow-right ms-2"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MOBILITY COMPARISON -->
+      <!-- =========================
 
-      <section class="section-padding mobility-comparison-section">
+             MOBILITY EXPERIENCE
+
+        ========================== -->
+
+      <section class="mobility-experience-section">
+        <div class="mobility-experience-bg"></div>
+
         <div class="container">
-          <div class="section-heading text-center">
-            <p class="section-eyebrow">CHOOSING HOW WE TRAVEL</p>
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="mobility-experience-content reveal">
+                <span class="eyebrow"> YOUR WORLD, CONNECTED </span>
 
-            <h2 class="section-title">EVERY JOURNEY <span>MATTERS.</span></h2>
+                <h2>
+                  Every journey opens a new
 
-            <p class="section-description mx-auto">
-              Different transport options serve different needs. The best choice
-              often depends on distance, accessibility, infrastructure and local
-              conditions.
+                  <span class="gradient-text">possibility.</span>
+                </h2>
+
+                <p>
+                  Imagine a world where different transport options work
+                  together, helping people make informed choices about how they
+                  travel.
+                </p>
+
+                <a href="cities.html" class="btn btn-fx">
+                  Explore Connected Cities
+
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobility-experience-label">
+          CONNECTED JOURNEYS · BETTER CITIES
+        </div>
+      </section>
+
+      <!-- =========================
+
+             MOBILITY PRINCIPLES
+
+        ========================== -->
+
+      <section class="section-padding mobility-principles-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="eyebrow"> BEYOND THE VEHICLE </span>
+
+              <h2>
+                Better mobility starts with
+
+                <span class="gradient-text">better systems.</span>
+              </h2>
+            </div>
+
+            <p>
+              The future of transportation depends on more than vehicles. It
+              requires thoughtful infrastructure and connected communities.
             </p>
           </div>
 
-          <div class="row g-4 mt-3">
-            <div class="col-md-4">
-              <div class="mobility-option-card">
-                <span class="mobility-option-icon">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <article class="mobility-principle-card reveal">
+                <div class="principle-icon">
+                  <i class="fa-solid fa-route"></i>
+                </div>
+
+                <div>
+                  <h3>Connected Networks</h3>
+
+                  <p>
+                    Link transport options to make journeys easier to plan and
+                    navigate.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="mobility-principle-card reveal">
+                <div class="principle-icon">
                   <i class="fa-solid fa-person-walking"></i>
-                </span>
+                </div>
 
-                <h3>Walking & Cycling</h3>
+                <div>
+                  <h3>People-Friendly Streets</h3>
 
-                <p>
-                  Useful for many short journeys and can help make
-                  neighbourhoods more active and people-friendly.
-                </p>
-
-                <span class="option-tag">SHORT DISTANCES</span>
-              </div>
+                  <p>Support walking, cycling and accessible public spaces.</p>
+                </div>
+              </article>
             </div>
 
-            <div class="col-md-4">
-              <div class="mobility-option-card">
-                <span class="mobility-option-icon">
-                  <i class="fa-solid fa-train-subway"></i>
-                </span>
+            <div class="col-md-6">
+              <article class="mobility-principle-card reveal">
+                <div class="principle-icon">
+                  <i class="fa-solid fa-plug-circle-bolt"></i>
+                </div>
 
-                <h3>Public Transport</h3>
+                <div>
+                  <h3>Charging Infrastructure</h3>
 
-                <p>
-                  Buses, trains and other shared services can move many people
-                  using fewer vehicles.
-                </p>
-
-                <span class="option-tag">SHARED JOURNEYS</span>
-              </div>
+                  <p>
+                    Develop charging options that support the growing use of
+                    EVs.
+                  </p>
+                </div>
+              </article>
             </div>
 
-            <div class="col-md-4">
-              <div class="mobility-option-card">
-                <span class="mobility-option-icon">
-                  <i class="fa-solid fa-car-side"></i>
-                </span>
+            <div class="col-md-6">
+              <article class="mobility-principle-card reveal">
+                <div class="principle-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
 
-                <h3>Electric Vehicles</h3>
+                <div>
+                  <h3>Safety by Design</h3>
 
-                <p>
-                  Electric cars can suit many journeys when charging access and
-                  local travel needs are considered.
-                </p>
-
-                <span class="option-tag">ELECTRIC MOBILITY</span>
-              </div>
+                  <p>
+                    Make safety and reliability central to transport innovation.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CTA -->
+      <!-- =========================
 
-      <section class="vision-cta-section">
-        <div class="container">
-          <div class="vision-cta-box">
-            <p class="section-eyebrow">THE JOURNEY CONTINUES</p>
+             CTA
+
+        ========================== -->
+
+      <section class="cta-section">
+        <div class="container text-center">
+          <div class="cta-content reveal">
+            <span class="eyebrow"> THE ROAD AHEAD </span>
 
             <h2>
-              MOVE FORWARD.<br />
+              The future is moving.
 
-              <span>THINK DIFFERENTLY.</span>
+              <span class="gradient-text">Move with it.</span>
             </h2>
 
             <p>
-              The future of mobility depends on more than vehicles. Discover the
-              cities and technologies that support them.
+              Explore the technologies and smart cities shaping tomorrow's
+              journeys.
             </p>
 
-            <div class="hero-buttons justify-content-center">
-              <a href="cities.html" class="btn future-btn">
-                Explore Smart Cities
+            <div class="cta-actions">
+              <a href="technology.html" class="btn btn-fx btn-lg">
+                Explore Technology
 
                 <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
 
-              <a href="technology.html" class="btn future-btn-outline">
-                Discover Technology
+              <a href="contact.html" class="hero-secondary-link">
+                Get in Touch
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
             </div>
           </div>
@@ -585,128 +698,128 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- =========================
 
-    <footer class="future-footer">
+         SHARED FOOTER
+
+    ========================== -->
+
+    <footer class="fx-footer">
       <div class="container">
-        <div class="row g-5 footer-main">
-          <div class="col-lg-4 col-md-6">
-            <a class="footer-logo" href="index.html"> FUTURE<span>X</span> </a>
+        <div class="row gy-5">
+          <!-- Brand -->
 
-            <p class="footer-about">
-              Exploring the possibilities of life in 2050 through technology,
-              sustainable thinking and human imagination.
+          <div class="col-lg-4">
+            <a href="index.html" class="footer-logo"> Future<span>X</span> </a>
+
+            <p class="footer-description">
+              A smarter, cleaner and more connected tomorrow. The future is not
+              just something we enter. It is something we create.
             </p>
 
-            <div class="footer-socials">
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
+            <div class="social-links">
+              <a href="https://www.instagram.com/" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
 
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
 
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              >
+              <a href="https://www.youtube.com/" aria-label="YouTube">
                 <i class="fa-brands fa-youtube"></i>
               </a>
 
-              <a
-                href="https://x.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
-              >
+              <a href="https://x.com/" aria-label="X">
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
             </div>
           </div>
 
-          <div class="col-6 col-lg-2 col-md-3">
+          <!-- Quick Links -->
+
+          <div class="col-6 col-lg-2 offset-lg-1">
             <h4 class="footer-heading">Explore</h4>
 
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
 
-              <li><a href="vision.html">Our Vision</a></li>
+              <li><a href="vision.html">Vision</a></li>
 
-              <li><a href="cities.html">Smart Cities</a></li>
+              <li><a href="cities.html">Cities</a></li>
 
               <li><a href="mobility.html">Mobility</a></li>
-            </ul>
-          </div>
 
-          <div class="col-6 col-lg-2 col-md-3">
-            <h4 class="footer-heading">Discover</h4>
-
-            <ul class="footer-links">
               <li><a href="technology.html">Technology</a></li>
 
-              <li><a href="contact.html">Contact Us</a></li>
-
-              <li><a href="vision.html">Our Vision</a></li>
-
-              <li><a href="index.html#future-world">FutureX Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <h4 class="footer-heading">A Better Tomorrow</h4>
+          <!-- Newsletter -->
 
-            <p class="footer-about">
-              Big changes begin with small ideas. Keep exploring and imagine
-              what the next generation can achieve.
+          <div class="col-lg-5">
+            <h4 class="footer-heading">Stay Ahead</h4>
+
+            <p class="footer-description">
+              Get updates about technology, innovation and the world of
+              tomorrow.
             </p>
 
-            <a href="contact.html" class="footer-contact-link">
-              Let's connect
-              <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
-            </a>
+            <form class="newsletter-form" id="newsletterForm">
+              <label for="newsletterEmail" class="visually-hidden">
+                Email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required
+              />
+
+              <button type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <p
+              class="form-message"
+              id="newsletterMessage"
+              aria-live="polite"
+            ></p>
           </div>
         </div>
 
+        <!-- Footer Bottom -->
+
         <div class="footer-bottom">
           <p>
-            © <span id="currentYear">2026</span> FutureX. All rights reserved.
+            © <span id="currentYear">2025</span>
+
+            FutureX. All rights reserved.
           </p>
 
-          <p>DESIGNED FOR TOMORROW <span class="footer-star">✦</span></p>
+          <a href="#top" class="back-to-top">
+            Back to top
+
+            <i class="fa-solid fa-arrow-up ms-1"></i>
+          </a>
         </div>
       </div>
     </footer>
 
-    <button
-      id="backToTop"
-      class="back-to-top"
-      type="button"
-      aria-label="Back to top"
-    >
+    <!-- Back To Top -->
+
+    <button class="back-top-button" id="backTop" aria-label="Back to top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <div
-      id="toastMessage"
-      class="future-toast"
-      role="status"
-      aria-live="polite"
-    ></div>
+    <!-- Bootstrap JavaScript -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared JavaScript -->
 
     <script src="main.js"></script>
   </body>
