@@ -1,39 +1,37 @@
-/* ========================================
-   FutureX - Main JavaScript
-   ======================================== */
+/* =====================================================
+   FUTUREX — LIFE IN 2050
+   Main JavaScript
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Display the current year in the footer
+  // ---------- 1. CURRENT YEAR ----------
+
   const currentYear = document.getElementById("currentYear");
 
   if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
   }
 
-  // 2. Show a notification message
-  const toastMessage = document.getElementById("toastMessage");
-  let toastTimer;
+  // ---------- 2. BACK TO TOP BUTTON ----------
 
-  function showToast(message) {
-    if (!toastMessage) return;
-
-    toastMessage.textContent = message;
-    toastMessage.classList.add("show");
-
-    clearTimeout(toastTimer);
-
-    toastTimer = setTimeout(function () {
-      toastMessage.classList.remove("show");
-    }, 3500);
-  }
-
-  // 3. Back to top button
   const backToTop = document.getElementById("backToTop");
 
   if (backToTop) {
-    backToTop.addEventListener("click", function (event) {
-      event.preventDefault();
+    function updateBackToTop() {
+      if (window.scrollY > 350) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    }
 
+    window.addEventListener("scroll", updateBackToTop, {
+      passive: true,
+    });
+
+    updateBackToTop();
+
+    backToTop.addEventListener("click", function () {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -41,45 +39,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 4. Contact form validation
-  const contactForm = document.getElementById("contactForm");
-  const contactFeedback = document.getElementById("contactFeedback");
+  // ---------- 3. MOBILE NAVIGATION ----------
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+  const navLinks = document.querySelectorAll(".future-navbar .nav-link");
 
-      if (!contactForm.checkValidity()) {
-        contactForm.classList.add("was-validated");
+  const navbarCollapse = document.getElementById("futureNavbar");
 
-        if (contactFeedback) {
-          contactFeedback.textContent =
-            "Please complete all required fields correctly.";
-        }
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (
+        navbarCollapse &&
+        navbarCollapse.classList.contains("show") &&
+        window.bootstrap
+      ) {
+        const collapseInstance =
+          window.bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
 
-        return;
+        collapseInstance.hide();
       }
-
-      const name = document.getElementById("contactName");
-      const email = document.getElementById("contactEmail");
-
-      if (contactFeedback) {
-        contactFeedback.textContent =
-          "Thank you, " +
-          name.value.trim() +
-          "! Your form has been checked successfully.";
-      }
-
-      showToast("Your contact form is ready!");
-
-      // This is a demo form.
-      // It does not send a message to a real inbox.
-      contactForm.reset();
-      contactForm.classList.remove("was-validated");
     });
+  });
+
+  // ---------- 4. TOAST MESSAGE ----------
+
+  const toastMessage = document.getElementById("toastMessage");
+
+  let toastTimeout;
+
+  function showToast(message) {
+    if (!toastMessage) {
+      return;
+    }
+
+    toastMessage.textContent = message;
+    toastMessage.classList.add("show");
+
+    clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(function () {
+      toastMessage.classList.remove("show");
+    }, 3500);
   }
 
-  // 5. Newsletter form
+  // ---------- 5. NEWSLETTER FORM ----------
+
   const newsletterForm = document.getElementById("newsletterForm");
   const newsletterEmail = document.getElementById("newsletterEmail");
   const newsletterFeedback = document.getElementById("newsletterFeedback");
@@ -89,11 +92,17 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
 
       if (!newsletterForm.checkValidity()) {
-        newsletterForm.classList.add("was-validated");
+        newsletterForm.reportValidity();
+        return;
+      }
 
+      const email = newsletterEmail ? newsletterEmail.value.trim() : "";
+
+      if (!email) {
         if (newsletterFeedback) {
-          newsletterFeedback.textContent =
-            "Please enter a valid email address.";
+          newsletterFeedback.textContent = "Please enter your email address.";
+
+          newsletterFeedback.classList.add("error");
         }
 
         return;
@@ -101,25 +110,117 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (newsletterFeedback) {
         newsletterFeedback.textContent =
-          "Thank you! Your email passed validation.";
+          "Your email looks valid. Newsletter subscription is not connected yet.";
+
+        newsletterFeedback.classList.remove("error");
       }
 
-      showToast("Newsletter form checked successfully!");
+      showToast(
+        "Demo only: newsletter subscription is not connected to a server yet.",
+      );
 
-      // This demo does not save emails to a server.
       newsletterForm.reset();
-      newsletterForm.classList.remove("was-validated");
     });
   }
 
-  // 6. Smooth scrolling for links that point to page sections
-  const sectionLinks = document.querySelectorAll('a[href^="#"]');
+  // ---------- 6. CONTACT FORM ----------
 
-  sectionLinks.forEach(function (link) {
+  const contactForm = document.getElementById("contactForm");
+  const contactFeedback = document.getElementById("contactFeedback");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const nameField = document.getElementById("contactName");
+      const emailField = document.getElementById("contactEmail");
+      const subjectField = document.getElementById("contactSubject");
+      const messageField = document.getElementById("contactMessage");
+
+      const name = nameField ? nameField.value.trim() : "";
+      const email = emailField ? emailField.value.trim() : "";
+      const subject = subjectField ? subjectField.value : "";
+      const message = messageField ? messageField.value.trim() : "";
+
+      if (!name || !email || !subject || !message) {
+        if (contactFeedback) {
+          contactFeedback.textContent = "Please complete all fields.";
+
+          contactFeedback.classList.add("error");
+        }
+
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        if (contactFeedback) {
+          contactFeedback.textContent = "Please enter a valid email address.";
+
+          contactFeedback.classList.add("error");
+        }
+
+        if (emailField) {
+          emailField.focus();
+        }
+
+        return;
+      }
+
+      const recipient = "hello@futurex.example";
+
+      const emailSubject = encodeURIComponent("FutureX Contact: " + subject);
+
+      const emailBody = encodeURIComponent(
+        "Name: " +
+          name +
+          "\n" +
+          "Email: " +
+          email +
+          "\n" +
+          "Subject: " +
+          subject +
+          "\n\n" +
+          "Message:\n" +
+          message,
+      );
+
+      if (contactFeedback) {
+        contactFeedback.textContent =
+          "Your message is prepared. Choose your email app to continue.";
+
+        contactFeedback.classList.remove("error");
+      }
+
+      showToast("Opening your email app. Review the message before sending.");
+
+      window.location.href =
+        "mailto:" +
+        recipient +
+        "?subject=" +
+        emailSubject +
+        "&body=" +
+        emailBody;
+    });
+  }
+
+  // ---------- 7. SMOOTH SCROLL FOR PAGE LINKS ----------
+
+  const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+  internalLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       const targetId = link.getAttribute("href");
 
-      if (!targetId || targetId === "#") return;
+      if (!targetId || targetId === "#") {
+        return;
+      }
 
       const targetElement = document.querySelector(targetId);
 
@@ -134,33 +235,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 7. Close the mobile navigation after clicking a page link
-  const navbar = document.getElementById("mainNavbar");
+  // ---------- 8. CARD HOVER SUPPORT ----------
 
-  if (navbar && typeof bootstrap !== "undefined") {
-    const navbarLinks = navbar.querySelectorAll(".nav-link");
-
-    navbarLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (navbar.classList.contains("show")) {
-          const collapse = bootstrap.Collapse.getOrCreateInstance(navbar);
-          collapse.hide();
-        }
-      });
-    });
-  }
-
-  // 8. Add a small hover effect to cards
-  const cards = document.querySelectorAll(
-    ".info-card, .feature-card, .signal-card, .city-card, .tech-card",
+  const hoverCards = document.querySelectorAll(
+    ".future-card, .vision-info-card, .value-card, " +
+      ".city-feature-card, .city-day-card, " +
+      ".mobility-card, .mobility-option-card",
   );
 
-  cards.forEach(function (card) {
+  hoverCards.forEach(function (card) {
     card.addEventListener("mouseenter", function () {
-      card.style.transition = "transform 0.3s ease";
+      card.classList.add("is-hovered");
+    });
+
+    card.addEventListener("mouseleave", function () {
+      card.classList.remove("is-hovered");
     });
   });
 
-  // 9. Log a message for development
-  console.log("FutureX website is ready!");
+  // ---------- 9. IMAGE LOADING FALLBACK ----------
+
+  const pageImages = document.querySelectorAll("img");
+
+  pageImages.forEach(function (img) {
+    img.addEventListener("error", function () {
+      img.classList.add("image-error");
+      img.style.opacity = "0.35";
+    });
+  });
+
+  // ---------- 10. PAGE READY ----------
+
+  document.body.classList.add("page-loaded");
+
+  console.log("FutureX website is ready.");
 });
