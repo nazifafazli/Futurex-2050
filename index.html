@@ -6,12 +6,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>FutureX | Life in 2025</title>
+
     <meta
       name="description"
-      content="FutureX — Explore life in 2050, from smart cities and electric mobility to artificial intelligence and future technology."
+      content="Discover the future of smart cities, advanced technology, sustainable mobility and a connected world."
     />
-
-    <title>FutureX | Life in 2050</title>
 
     <!-- Google Fonts -->
 
@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -34,42 +34,50 @@
     <!-- Font Awesome -->
 
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <!-- Main CSS -->
+    <!-- Main CSS: we will create this at the end -->
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <!-- NAVBAR -->
+  <body id="top">
+    <!-- =========================
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top future-navbar">
+         NAVBAR
+
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top fx-navbar">
       <div class="container">
-        <a class="navbar-brand future-logo" href="index.html">
-          FUTURE<span>X</span><small> LIFE IN 2050</small>
+        <!-- Logo -->
+
+        <a class="navbar-brand fx-logo" href="index.html">
+          Future<span>X</span>
         </a>
+
+        <!-- Mobile Menu Button -->
 
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#futureNavbar"
-          aria-controls="futureNavbar"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="futureNavbar">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <!-- Navigation Links -->
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >Home</a
-              >
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
 
             <li class="nav-item">
@@ -77,7 +85,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="cities.html">Smart Cities</a>
+              <a class="nav-link" href="cities.html">Cities</a>
             </li>
 
             <li class="nav-item">
@@ -91,687 +99,520 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-
-            <li class="nav-item ms-lg-2">
-              <a class="btn future-btn future-btn-small" href="vision.html">
-                Explore Future <i class="fa-solid fa-arrow-right ms-2"></i>
-              </a>
-            </li>
           </ul>
+
+          <a href="vision.html" class="btn btn-fx nav-cta">
+            Explore
+
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- HERO SECTION -->
+      <!-- =========================
+
+             HERO SECTION
+
+        ========================== -->
 
       <section class="hero-section">
+        <!-- Background Image -->
+
+        <div class="hero-bg"></div>
+
+        <!-- Dark Overlay -->
+
         <div class="hero-overlay"></div>
 
-        <div class="container hero-content">
+        <div class="container hero-container">
           <div class="row align-items-center min-vh-100">
-            <div class="col-lg-8 col-xl-7">
-              <div class="hero-badge">
+            <div class="col-lg-8 hero-content">
+              <span class="eyebrow reveal">
                 <span class="status-dot"></span>
 
-                A NEW ERA IS COMING
-              </div>
+                CLEANER · SMARTER · BRIGHTER
+              </span>
 
-              <p class="hero-eyebrow">WELCOME TO THE YEAR 2050</p>
+              <h1 class="hero-title reveal">
+                Future<span>X</span>
 
-              <h1 class="hero-title">
-                THE FUTURE<br />
+                <br />
 
-                IS <span>NOW.</span>
+                Life in <span class="gradient-text">2025</span>
               </h1>
 
-              <p class="hero-description">
-                Imagine a world where intelligent cities breathe, clean energy
-                powers every home, and technology brings humanity closer to a
-                better tomorrow.
+              <p class="hero-description reveal">
+                A vision of a connected world, where technology and humanity
+                build a better tomorrow.
               </p>
 
-              <div class="hero-buttons">
-                <a href="vision.html" class="btn future-btn">
-                  Discover Our Vision
+              <div class="hero-actions reveal">
+                <a href="vision.html" class="btn btn-fx btn-lg">
+                  Explore the Future
 
                   <i class="fa-solid fa-arrow-right ms-2"></i>
                 </a>
 
-                <a href="#future-world" class="btn future-btn-outline">
-                  <i class="fa-solid fa-play me-2"></i>
+                <a href="#discover" class="hero-secondary-link">
+                  <i class="fa-regular fa-circle-play me-2"></i>
 
-                  Explore the Future
+                  Discover More
                 </a>
               </div>
 
-              <div class="hero-caption">
-                <span class="hero-line"></span>
+              <div class="hero-note reveal">
+                <span class="hero-note-line"></span>
 
-                <span>REIMAGINING TOMORROW, TODAY</span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 d-none d-lg-flex justify-content-end">
-              <div class="hero-floating-card">
-                <span class="floating-icon">
-                  <i class="fa-solid fa-earth-americas"></i>
-                </span>
-
-                <p class="floating-label">OUR SHARED FUTURE</p>
-
-                <h3>A Smarter Planet</h3>
-
-                <p>Technology and nature working together.</p>
-
-                <a href="cities.html">
-                  Discover smart cities
-                  <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                </a>
+                IMAGINE WHAT COMES NEXT
               </div>
             </div>
           </div>
         </div>
 
-        <a
-          href="#future-world"
-          class="scroll-indicator"
-          aria-label="Scroll down"
-        >
+        <!-- Scroll Indicator -->
+
+        <a href="#statistics" class="hero-scroll">
           <span>SCROLL TO EXPLORE</span>
 
-          <i class="fa-solid fa-chevron-down"></i>
+          <i class="fa-solid fa-arrow-down"></i>
         </a>
 
-        <div class="hero-coordinate">51°30'26.4"N — FUTURE EARTH</div>
+        <div class="hero-index">01 <span>/</span> 06</div>
       </section>
 
-      <!-- INTRODUCTION -->
+      <!-- =========================
 
-      <section class="section-padding intro-section" id="future-world">
+             STATISTICS
+
+        ========================== -->
+
+      <section class="stats-section" id="statistics">
         <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="section-image-wrap intro-image-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85"
-                  alt="A futuristic view of Earth and the night sky"
-                  class="section-image"
-                  loading="lazy"
-                />
+          <div class="row g-0">
+            <div class="col-6 col-lg-3">
+              <div class="stat-item reveal">
+                <span class="stat-number" data-count="100" data-suffix="%"
+                  >0</span
+                >
 
-                <div class="image-label">
-                  <span class="status-dot"></span>
-
-                  THE WORLD OF TOMORROW
-                </div>
-
-                <div class="image-corner-mark">FX / 2050</div>
+                <p>Renewable Energy Goal</p>
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <p class="section-eyebrow">01 / THE BIG PICTURE</p>
+            <div class="col-6 col-lg-3">
+              <div class="stat-item reveal">
+                <span class="stat-number" data-count="10" data-suffix="B+"
+                  >0</span
+                >
 
-              <h2 class="section-title">
-                A DIFFERENT WORLD.<br />
+                <p>Connected Devices</p>
+              </div>
+            </div>
 
-                <span>A NEW POSSIBILITY.</span>
+            <div class="col-6 col-lg-3">
+              <div class="stat-item reveal">
+                <span class="stat-number" data-count="0" data-suffix="%"
+                  >0</span
+                >
+
+                <p>Carbon Emissions Goal</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="stat-item reveal">
+                <span class="stat-number" data-count="100" data-suffix="%"
+                  >0</span
+                >
+
+                <p>Smart Infrastructure Goal</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="stats-disclaimer">
+            Illustrative project goals, not verified real-world statistics.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+
+             DISCOVER THE FUTURE
+
+        ========================== -->
+
+      <section class="section-padding discover-section" id="discover">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="eyebrow"> A NEW ERA BEGINS </span>
+
+              <h2>
+                Explore the
+
+                <span class="gradient-text">Future</span>
               </h2>
-
-              <p class="section-description">
-                What will life look like in 2050? Our homes, cities,
-                transportation and everyday experiences could change in
-                extraordinary ways. FutureX explores these possibilities through
-                innovation, sustainability and human creativity.
-              </p>
-
-              <p class="section-description">
-                The future is not simply something we wait for. It is something
-                we shape through the choices we make today.
-              </p>
-
-              <a href="vision.html" class="text-link">
-                Explore our vision
-
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-
-              <div class="intro-mini-stats">
-                <div>
-                  <h3>2050</h3>
-
-                  <p>Our future horizon</p>
-                </div>
-
-                <div>
-                  <h3>01</h3>
-
-                  <p>Shared planet</p>
-                </div>
-
-                <div>
-                  <h3>∞</h3>
-
-                  <p>Possibilities</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FUTURE STATS -->
-
-      <section class="stats-section">
-        <div class="container">
-          <div class="row g-4">
-            <div class="col-6 col-lg-3">
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fa-solid fa-solar-panel"></i>
-                </div>
-
-                <h3>Clean Energy</h3>
-
-                <p>A future powered by renewable possibilities.</p>
-              </div>
             </div>
 
-            <div class="col-6 col-lg-3">
-              <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-city"></i></div>
-
-                <h3>Smart Cities</h3>
-
-                <p>Urban spaces designed for people and nature.</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fa-solid fa-microchip"></i>
-                </div>
-
-                <h3>AI Innovation</h3>
-
-                <p>Intelligent systems supporting everyday life.</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-              <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
-
-                <h3>Green Living</h3>
-
-                <p>A more thoughtful relationship with our planet.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FUTURE PILLARS -->
-
-      <section class="section-padding pillars-section">
-        <div class="container">
-          <div class="section-heading text-center">
-            <p class="section-eyebrow">02 / THE NEXT FRONTIER</p>
-
-            <h2 class="section-title">FOUR PILLARS OF <span>TOMORROW</span></h2>
-
-            <p class="section-description mx-auto">
-              Explore the ideas and innovations that could redefine the way we
-              live, move, build and connect.
+            <p>
+              Discover the ideas and innovations shaping a smarter and more
+              sustainable world.
             </p>
           </div>
 
-          <div class="row g-4 mt-3">
-            <!-- VISION CARD -->
+          <div class="row g-4">
+            <!-- Vision Card -->
 
             <div class="col-md-6 col-xl-3">
-              <article class="future-card">
-                <div class="future-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85"
-                    alt="Planet Earth viewed from space"
-                    loading="lazy"
-                  />
+              <a href="vision.html" class="feature-card reveal">
+                <div class="feature-card-top">
+                  <div class="feature-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                  </div>
 
-                  <span class="card-number">01</span>
+                  <span class="feature-number">01</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">THE BIG IDEA</span>
+                <span class="feature-category"> OUR VISION </span>
 
-                  <h3>Our Vision</h3>
+                <h3>A Sustainable Tomorrow</h3>
 
-                  <p>
-                    Discover a future built around human potential,
-                    responsibility and progress.
-                  </p>
+                <p>
+                  Building a future where people and nature thrive together.
+                </p>
 
-                  <a
-                    href="vision.html"
-                    class="card-link"
-                    aria-label="Explore our vision"
-                  >
-                    Explore vision <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
+                <span class="card-link">
+                  Explore Vision
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
             </div>
 
-            <!-- CITIES CARD -->
+            <!-- Cities Card -->
 
             <div class="col-md-6 col-xl-3">
-              <article class="future-card">
-                <div class="future-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85"
-                    alt="Modern architecture in a city"
-                    loading="lazy"
-                  />
+              <a href="cities.html" class="feature-card reveal">
+                <div class="feature-card-top">
+                  <div class="feature-icon">
+                    <i class="fa-solid fa-city"></i>
+                  </div>
 
-                  <span class="card-number">02</span>
+                  <span class="feature-number">02</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">URBAN EVOLUTION</span>
+                <span class="feature-category"> SMART CITIES </span>
 
-                  <h3>Smart Cities</h3>
+                <h3>Smarter Urban Living</h3>
 
-                  <p>
-                    Explore connected urban spaces, intelligent buildings and
-                    greener ways of living.
-                  </p>
+                <p>
+                  Connected cities designed around people, technology and
+                  nature.
+                </p>
 
-                  <a
-                    href="cities.html"
-                    class="card-link"
-                    aria-label="Explore smart cities"
-                  >
-                    Explore cities <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
+                <span class="card-link">
+                  Explore Cities
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
             </div>
 
-            <!-- MOBILITY CARD -->
+            <!-- Mobility Card -->
 
             <div class="col-md-6 col-xl-3">
-              <article class="future-card">
-                <div class="future-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85"
-                    alt="Electric vehicle charging"
-                    loading="lazy"
-                  />
+              <a href="mobility.html" class="feature-card reveal">
+                <div class="feature-card-top">
+                  <div class="feature-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                  </div>
 
-                  <span class="card-number">03</span>
+                  <span class="feature-number">03</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">BEYOND THE ROAD</span>
+                <span class="feature-category"> FUTURE MOBILITY </span>
 
-                  <h3>Future Mobility</h3>
+                <h3>Movement Without Limits</h3>
 
-                  <p>
-                    Discover electric transportation and emerging ideas for
-                    moving through tomorrow.
-                  </p>
+                <p>
+                  Cleaner transportation and smarter ways to move around our
+                  world.
+                </p>
 
-                  <a
-                    href="mobility.html"
-                    class="card-link"
-                    aria-label="Explore future mobility"
-                  >
-                    Explore mobility <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
+                <span class="card-link">
+                  Explore Mobility
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
             </div>
 
-            <!-- TECHNOLOGY CARD -->
+            <!-- Technology Card -->
 
             <div class="col-md-6 col-xl-3">
-              <article class="future-card">
-                <div class="future-card-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85"
-                    alt="Artificial intelligence concept"
-                    loading="lazy"
-                  />
+              <a href="technology.html" class="feature-card reveal">
+                <div class="feature-card-top">
+                  <div class="feature-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                  </div>
 
-                  <span class="card-number">04</span>
+                  <span class="feature-number">04</span>
                 </div>
 
-                <div class="future-card-body">
-                  <span class="card-category">DIGITAL REVOLUTION</span>
+                <span class="feature-category"> INNOVATION </span>
 
-                  <h3>Technology</h3>
+                <h3>Intelligence Reimagined</h3>
 
-                  <p>
-                    See how artificial intelligence, robotics and innovation may
-                    influence our daily lives.
-                  </p>
+                <p>
+                  Exploring artificial intelligence and the technologies of
+                  tomorrow.
+                </p>
 
-                  <a
-                    href="technology.html"
-                    class="card-link"
-                    aria-label="Explore future technology"
-                  >
-                    Explore technology <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
+                <span class="card-link">
+                  Explore Technology
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FEATURE SECTION -->
+      <!-- =========================
 
-      <section class="feature-section">
+             SMART CITY SHOWCASE
+
+        ========================== -->
+
+      <section class="showcase-section">
+        <div class="showcase-bg"></div>
+
         <div class="container">
-          <div class="row align-items-center g-5">
+          <div class="row align-items-center">
             <div class="col-lg-6">
-              <div class="feature-image-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=85"
-                  alt="Contemporary city skyline"
-                  loading="lazy"
-                />
+              <div class="showcase-content reveal">
+                <span class="eyebrow"> THE CITY OF TOMORROW </span>
 
-                <div class="feature-image-caption">
-                  <span class="status-dot"></span>
+                <h2>
+                  Where innovation meets
+                  <span class="gradient-text">nature.</span>
+                </h2>
 
-                  REIMAGINE URBAN LIFE
-                </div>
+                <p>
+                  Imagine cities powered by clean energy, connected by
+                  intelligent infrastructure and designed to give people a
+                  better life.
+                </p>
+
+                <a href="cities.html" class="btn btn-fx">
+                  Discover Smart Cities
+
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="col-lg-6">
-              <p class="section-eyebrow">03 / LIVING DIFFERENTLY</p>
+        <div class="showcase-label">SMART LIVING · BETTER TOMORROW</div>
+      </section>
 
-              <h2 class="section-title">
-                BUILDING A FUTURE<br />
+      <!-- =========================
 
-                <span>WORTH LIVING IN.</span>
+             FUTURE TECHNOLOGY
+
+        ========================== -->
+
+      <section class="section-padding technology-preview">
+        <div class="container">
+          <div class="tech-banner reveal">
+            <div class="tech-banner-content">
+              <span class="eyebrow"> BEYOND TODAY </span>
+
+              <h2>
+                Tomorrow is built by what we
+
+                <span class="gradient-text">imagine.</span>
               </h2>
 
-              <p class="section-description">
-                The most exciting future is not only more advanced. It is also
-                more accessible, more sustainable and more connected to what
-                people truly need.
+              <p>
+                Discover how artificial intelligence, clean energy and digital
+                innovation can reshape our world.
               </p>
 
-              <div class="feature-list">
-                <div class="feature-list-item">
-                  <span class="feature-check"
-                    ><i class="fa-solid fa-check"></i
-                  ></span>
-
-                  <div>
-                    <h4>Designed Around People</h4>
-
-                    <p>Technology that supports people and communities.</p>
-                  </div>
-                </div>
-
-                <div class="feature-list-item">
-                  <span class="feature-check"
-                    ><i class="fa-solid fa-check"></i
-                  ></span>
-
-                  <div>
-                    <h4>Inspired by Nature</h4>
-
-                    <p>Ideas that value resources and the natural world.</p>
-                  </div>
-                </div>
-
-                <div class="feature-list-item">
-                  <span class="feature-check"
-                    ><i class="fa-solid fa-check"></i
-                  ></span>
-
-                  <div>
-                    <h4>Driven by Innovation</h4>
-
-                    <p>New possibilities shaped by imagination and research.</p>
-                  </div>
-                </div>
-              </div>
-
-              <a href="technology.html" class="btn future-btn mt-3">
-                Discover What's Next
+              <a href="technology.html" class="btn btn-fx">
+                Explore Technology
 
                 <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
             </div>
+
+            <div class="tech-decoration" aria-hidden="true">
+              <div class="tech-orbit orbit-one"></div>
+
+              <div class="tech-orbit orbit-two"></div>
+
+              <i class="fa-solid fa-microchip"></i>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- QUOTE SECTION -->
+      <!-- =========================
 
-      <section class="quote-section">
-        <div class="container">
-          <div class="quote-content text-center">
-            <span class="quote-icon"
-              ><i class="fa-solid fa-quote-left"></i
-            ></span>
+             CONTACT CTA
 
-            <p class="quote-label">A THOUGHT FOR TOMORROW</p>
+        ========================== -->
+
+      <section class="cta-section">
+        <div class="container text-center">
+          <div class="cta-content reveal">
+            <span class="eyebrow"> THE FUTURE STARTS WITH US </span>
 
             <h2>
-              “The future is shaped by<br />
+              Let's build something
 
-              <span>what we create today.</span>”
+              <span class="gradient-text">extraordinary.</span>
             </h2>
 
-            <p class="quote-note">
-              Every idea begins with the courage to imagine something better.
-            </p>
-          </div>
-        </div>
-      </section>
+            <p>Have an idea for tomorrow? Let's explore it together.</p>
 
-      <!-- NEWSLETTER -->
+            <a href="contact.html" class="btn btn-fx btn-lg">
+              Get in Touch
 
-      <section class="section-padding newsletter-section">
-        <div class="container">
-          <div class="newsletter-box">
-            <div class="row align-items-center g-4">
-              <div class="col-lg-6">
-                <p class="section-eyebrow">STAY AHEAD OF TOMORROW</p>
-
-                <h2 class="section-title">
-                  THE FUTURE<br />
-
-                  <span>STARTS HERE.</span>
-                </h2>
-
-                <p class="section-description mb-lg-0">
-                  Join our newsletter for fresh ideas, emerging technologies and
-                  inspiration from the world of tomorrow.
-                </p>
-              </div>
-
-              <div class="col-lg-6">
-                <form id="newsletterForm" class="newsletter-form" novalidate>
-                  <label for="newsletterEmail" class="form-label">
-                    Your email address
-                  </label>
-
-                  <div class="newsletter-input-group">
-                    <input
-                      type="email"
-                      id="newsletterEmail"
-                      name="email"
-                      class="form-control"
-                      placeholder="you@example.com"
-                      autocomplete="email"
-                      required
-                    />
-
-                    <button type="submit" class="btn future-btn">
-                      Join Us <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </button>
-                  </div>
-
-                  <p
-                    id="newsletterFeedback"
-                    class="form-feedback"
-                    aria-live="polite"
-                  ></p>
-
-                  <p class="newsletter-privacy">
-                    <i class="fa-solid fa-shield-halved me-2"></i>
-
-                    Your inbox, your choice. No unnecessary emails.
-                  </p>
-                </form>
-              </div>
-            </div>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- =========================
 
-    <footer class="future-footer">
+         FOOTER
+
+    ========================== -->
+
+    <footer class="fx-footer">
       <div class="container">
-        <div class="row g-5 footer-main">
-          <div class="col-lg-4 col-md-6">
-            <a class="footer-logo" href="index.html"> FUTURE<span>X</span> </a>
+        <div class="row gy-5">
+          <!-- Brand -->
 
-            <p class="footer-about">
-              Exploring the possibilities of life in 2050 through technology,
-              sustainable thinking and human imagination.
+          <div class="col-lg-4">
+            <a href="index.html" class="footer-logo"> Future<span>X</span> </a>
+
+            <p class="footer-description">
+              A smarter, cleaner and more connected tomorrow. The future is not
+              just something we enter. It is something we create.
             </p>
 
-            <div class="footer-socials">
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
+            <div class="social-links">
+              <a href="https://www.instagram.com/" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
 
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
 
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              >
+              <a href="https://www.youtube.com/" aria-label="YouTube">
                 <i class="fa-brands fa-youtube"></i>
               </a>
 
-              <a
-                href="https://x.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
-              >
+              <a href="https://x.com/" aria-label="X">
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
             </div>
           </div>
 
-          <div class="col-6 col-lg-2 col-md-3">
+          <!-- Quick Links -->
+
+          <div class="col-6 col-lg-2 offset-lg-1">
             <h4 class="footer-heading">Explore</h4>
 
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
 
-              <li><a href="vision.html">Our Vision</a></li>
+              <li><a href="vision.html">Vision</a></li>
 
-              <li><a href="cities.html">Smart Cities</a></li>
+              <li><a href="cities.html">Cities</a></li>
 
               <li><a href="mobility.html">Mobility</a></li>
-            </ul>
-          </div>
 
-          <div class="col-6 col-lg-2 col-md-3">
-            <h4 class="footer-heading">Discover</h4>
-
-            <ul class="footer-links">
               <li><a href="technology.html">Technology</a></li>
 
-              <li><a href="contact.html">Contact Us</a></li>
-
-              <li><a href="#future-world">Our Mission</a></li>
-
-              <li><a href="vision.html">The Future</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <h4 class="footer-heading">A Better Tomorrow</h4>
+          <!-- Newsletter -->
 
-            <p class="footer-about">
-              Big changes begin with small ideas. Keep exploring and imagine
-              what the next generation can achieve.
+          <div class="col-lg-5">
+            <h4 class="footer-heading">Stay Ahead</h4>
+
+            <p class="footer-description">
+              Get updates about technology, innovation and the world of
+              tomorrow.
             </p>
 
-            <a href="contact.html" class="footer-contact-link">
-              Let's connect
-              <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
-            </a>
+            <form class="newsletter-form" id="newsletterForm">
+              <label for="newsletterEmail" class="visually-hidden">
+                Email address
+              </label>
+
+              <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required
+              />
+
+              <button type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <p
+              class="form-message"
+              id="newsletterMessage"
+              aria-live="polite"
+            ></p>
           </div>
         </div>
 
+        <!-- Footer Bottom -->
+
         <div class="footer-bottom">
           <p>
-            © <span id="currentYear">2026</span> FutureX. All rights reserved.
+            © <span id="currentYear">2025</span>
+
+            FutureX. All rights reserved.
           </p>
 
-          <p>DESIGNED FOR TOMORROW <span class="footer-star">✦</span></p>
+          <a href="#top" class="back-to-top">
+            Back to top
+
+            <i class="fa-solid fa-arrow-up ms-1"></i>
+          </a>
         </div>
       </div>
     </footer>
 
-    <!-- BACK TO TOP -->
+    <!-- Back To Top Button -->
 
-    <button
-      id="backToTop"
-      class="back-to-top"
-      type="button"
-      aria-label="Back to top"
-    >
+    <button class="back-top-button" id="backTop" aria-label="Back to top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- TOAST MESSAGE -->
-
-    <div
-      id="toastMessage"
-      class="future-toast"
-      role="status"
-      aria-live="polite"
-    ></div>
-
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JavaScript -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Main JavaScript -->
+    <!-- Our JavaScript: we will create it at the end -->
 
     <script src="main.js"></script>
   </body>
