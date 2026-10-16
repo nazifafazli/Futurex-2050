@@ -1,245 +1,647 @@
-/* =========================================================
+"use strict";
 
-   FUTUREX — MAIN JAVASCRIPT
+/* FutureX interactions — shared across all six pages */
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = $("#siteNav");
+  const progress = $("#scrollProgress");
+  const backToTop = $("#backToTop");
+  const toast = $("#toastMessage");
+  let toastTimer;
 
-document.addEventListener("DOMContentLoaded", function () {
-  /* ===================== 1. CURRENT YEAR ===================== */
+  // Highlight the current page in navigation.
+  const currentFile = location.pathname.split("/").pop() || "index.html";
 
-  const currentYear = document.getElementById("currentYear");
+  $$(".fx-nav .nav-link").forEach((link) => {
+    const href = link.getAttribute("href");
 
-  if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-  }
-
-  /* ===================== 2. NAVBAR SCROLL EFFECT ===================== */
-
-  const navbar = document.querySelector(".fx-navbar");
-
-  function updateNavbar() {
-    if (!navbar) return;
-
-    if (window.scrollY > 50) {
-      navbar.classList.add("navbar-scrolled");
-    } else {
-      navbar.classList.remove("navbar-scrolled");
+    if (href === currentFile) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
-  }
+  });
 
-  updateNavbar();
+  // Header, scroll progress and back-to-top button.
+  const updateScrollUI = () => {
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
 
-  window.addEventListener("scroll", updateNavbar);
+    const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
 
-  /* ===================== 3. BACK TO TOP ===================== */
-
-  const backTop = document.getElementById("backTop");
-
-  function updateBackTop() {
-    if (!backTop) return;
-
-    if (window.scrollY > 350) {
-      backTop.classList.add("visible");
-    } else {
-      backTop.classList.remove("visible");
+    if (progress) {
+      progress.style.width = `${Math.min(100, Math.max(0, percent))}%`;
     }
-  }
 
-  updateBackTop();
+    if (nav) {
+      nav.classList.toggle("scrolled", window.scrollY > 24);
+    }
 
-  window.addEventListener("scroll", updateBackTop);
+    if (backToTop) {
+      backToTop.classList.toggle("visible", window.scrollY > 500);
+    }
+  };
 
-  if (backTop) {
-    backTop.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
+  updateScrollUI();
 
-        behavior: "smooth",
-      });
+  window.addEventListener("scroll", updateScrollUI, {
+    passive: true,
+  });
+
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-  }
+  });
 
-  /* ===================== 4. SCROLL REVEAL ANIMATION ===================== */
-
-  const revealElements = document.querySelectorAll("[data-reveal]");
+  // Reveal elements when they enter the viewport.
+  const revealItems = $$(".reveal");
 
   if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -25px 0px",
+      },
+    );
+
+    revealItems.forEach((item) => {
+      revealObserver.observe(item);
+    });
+  } else {
+    revealItems.forEach((item) => {
+      item.classList.add("is-visible");
+    });
+  }
+
+  // Animated counters.
+  const counters = $$("[data-counter]");
+
+  const animateCounter = (node) => {
+    if (node.dataset.counted === "true") return;
+
+    node.dataset.counted = "true";
+
+    const end = Number(node.dataset.counter);
+
+    if (!Number.isFinite(end)) return;
+
+    const duration = 1200;
+    const start = performance.now();
+
+    const step = (now) => {
+      const progressValue = Math.min((now - start) / duration, 1);
+
+      const eased = 1 - Math.pow(1 - progressValue, 3);
+
+      node.textContent = Math.round(end * eased).toLocaleString("en-GB");
+
+      if (progressValue < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
             observer.unobserve(entry.target);
           }
         });
       },
-
       {
-        threshold: 0.12,
+        threshold: 0.4,
       },
     );
 
-    revealElements.forEach(function (element) {
-      revealObserver.observe(element);
+    counters.forEach((counter) => {
+      counterObserver.observe(counter);
     });
   } else {
-    revealElements.forEach(function (element) {
-      element.classList.add("revealed");
+    counters.forEach(animateCounter);
+  }
+
+  // Theme toggle.
+  const themeToggle = $("#themeToggle");
+
+  const savedTheme = (() => {
+    try {
+      return localStorage.getItem("futurex-theme");
+    } catch {
+      return null;
+    }
+  })();
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+  }
+
+  const updateThemeButton = () => {
+    if (!themeToggle) return;
+
+    const light = document.body.classList.contains("light-mode");
+
+    themeToggle.innerHTML = light
+      ? '<i class="fa-solid fa-moon"></i>'
+      : '<i class="fa-solid fa-sun"></i>';
+
+    themeToggle.setAttribute(
+      "aria-label",
+      light ? "Switch to dark theme" : "Switch to light theme",
+    );
+  };
+
+  updateThemeButton();
+
+  themeToggle?.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    try {
+      localStorage.setItem(
+        "futurex-theme",
+        document.body.classList.contains("light-mode") ? "light" : "dark",
+      );
+    } catch {
+      // The theme toggle still works if storage is unavailable.
+    }
+
+    updateThemeButton();
+  });
+
+  // Close the mobile navigation after selecting a link.
+  $$("#mainNav .nav-link, #mainNav .nav-cta").forEach((link) => {
+    link.addEventListener("click", () => {
+      const menu = $("#mainNav");
+
+      if (menu?.classList.contains("show") && window.bootstrap?.Collapse) {
+        window.bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      }
+    });
+  });
+
+  // Reusable toast notification.
+  const showToast = (message) => {
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    window.clearTimeout(toastTimer);
+
+    toastTimer = window.setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  };
+
+  // Image lightbox.
+  $$("[data-lightbox]").forEach((tile) => {
+    tile.addEventListener("click", () => {
+      const src = tile.dataset.lightbox;
+      const img = tile.querySelector("img");
+
+      if (!src || !img) return;
+
+      const dialog = document.createElement("dialog");
+      dialog.className = "image-dialog";
+
+      dialog.innerHTML =
+        '<button class="image-dialog-close" type="button" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button><img alt=""><p></p>';
+
+      $("img", dialog).src = src;
+      $("img", dialog).alt = img.alt;
+      $("p", dialog).textContent = img.alt;
+
+      document.body.append(dialog);
+
+      const close = () => {
+        if (dialog.open) dialog.close();
+        dialog.remove();
+      };
+
+      $(".image-dialog-close", dialog).addEventListener("click", close);
+
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) close();
+      });
+
+      dialog.addEventListener("close", () => dialog.remove(), { once: true });
+
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+        dialog.style.display = "block";
+      }
+    });
+  });
+
+  // Vision timeline selector.
+  const timelineData = {
+    2030: {
+      eyebrow: "CHAPTER 01 / 03",
+      title: "The transition",
+      description:
+        "Cleaner energy, connected infrastructure and more useful digital tools begin to reshape daily routines.",
+      tags: ["Smart grids", "Clean transport", "Digital helpers"],
+    },
+
+    2040: {
+      eyebrow: "CHAPTER 02 / 03",
+      title: "The acceleration",
+      description:
+        "More shared mobility, adaptive services and collaborative machines become part of the everyday conversation.",
+      tags: ["Shared mobility", "Adaptive services", "Helpful robotics"],
+    },
+
+    2050: {
+      eyebrow: "CHAPTER 03 / 03",
+      title: "A new balance",
+      description:
+        "The most hopeful scenario puts human wellbeing, responsible technology and the living planet at the centre of progress.",
+      tags: ["Human-first design", "Circular thinking", "Responsible AI"],
+    },
+  };
+
+  const timelinePanel = $("#timelinePanel");
+
+  if (timelinePanel) {
+    $$("[data-year]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const data = timelineData[button.dataset.year];
+
+        if (!data) return;
+
+        $$("[data-year]").forEach((item) => {
+          const active = item === button;
+
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        const image = $("#timelineImage");
+
+        if (image) image.style.opacity = "0.25";
+
+        window.setTimeout(() => {
+          $("#timelineEyebrow").textContent = data.eyebrow;
+          $("#timelineTitle").textContent = data.title;
+          $("#timelineDescription").textContent = data.description;
+
+          $("#timelineTags").innerHTML = data.tags
+            .map((tag) => `<span>${tag}</span>`)
+            .join("");
+
+          if (image) {
+            image.src = button.dataset.image;
+            image.alt = button.dataset.imageAlt || "";
+
+            image.onload = () => {
+              image.style.opacity = "1";
+            };
+
+            if (image.complete) {
+              image.style.opacity = "1";
+            }
+          }
+        }, 160);
+      });
     });
   }
 
-  /* ===================== 5. CLOSE MOBILE NAVBAR ===================== */
+  // City filters and live search.
+  const cityGrid = $("#cityGrid");
 
-  const navbarCollapse = document.getElementById("mainNavbar");
+  if (cityGrid) {
+    let activeFilter = "all";
 
-  const navbarLinks = document.querySelectorAll(
-    "#mainNavbar .nav-link, #mainNavbar .nav-cta",
-  );
+    const searchInput = $("#citySearch");
 
-  if (navbarCollapse && window.bootstrap) {
-    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(
-      navbarCollapse,
-      {
-        toggle: false,
-      },
-    );
+    const updateCities = () => {
+      const query = (searchInput?.value || "").trim().toLowerCase();
 
-    navbarLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (
-          window.innerWidth < 992 &&
-          navbarCollapse.classList.contains("show")
-        ) {
-          collapseInstance.hide();
+      let visibleCount = 0;
+
+      $$(".city-item", cityGrid).forEach((card) => {
+        const categoryMatches =
+          activeFilter === "all" || card.dataset.category === activeFilter;
+
+        const searchMatches =
+          !query ||
+          `${card.dataset.name} ${card.textContent}`
+            .toLowerCase()
+            .includes(query);
+
+        const visible = categoryMatches && searchMatches;
+
+        card.classList.toggle("d-none", !visible);
+
+        if (visible) visibleCount += 1;
+      });
+
+      $("#emptyCities")?.classList.toggle("d-none", visibleCount !== 0);
+    };
+
+    $$("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        $$("[data-filter]").forEach((item) => {
+          item.classList.toggle("active", item === button);
+        });
+
+        updateCities();
+      });
+    });
+
+    searchInput?.addEventListener("input", updateCities);
+
+    const cityModalElement = $("#cityModal");
+
+    const cityModal =
+      cityModalElement && window.bootstrap?.Modal
+        ? window.bootstrap.Modal.getOrCreateInstance(cityModalElement)
+        : null;
+
+    $$("[data-city-detail]").forEach((button) => {
+      button.addEventListener("click", () => {
+        $("#cityModalTitle").textContent =
+          button.dataset.cityDetail || "District";
+
+        $("#cityModalText").textContent = button.dataset.detail || "";
+
+        if (cityModal) {
+          cityModal.show();
+        } else {
+          showToast(`${button.dataset.cityDetail}: ${button.dataset.detail}`);
         }
       });
     });
   }
 
-  /* ===================== 6. NEWSLETTER FORM ===================== */
+  // Mobility simulator. Figures are illustrative estimates.
+  const distanceRange = $("#distanceRange");
 
-  const newsletterForm = document.getElementById("newsletterForm");
+  if (distanceRange) {
+    const modes = {
+      car: {
+        speed: 35,
+        wait: 8,
+        co2PerKm: 0.12,
+      },
+      pod: {
+        speed: 55,
+        wait: 4,
+        co2PerKm: 0.035,
+      },
+      rail: {
+        speed: 180,
+        wait: 9,
+        co2PerKm: 0.018,
+      },
+      air: {
+        speed: 150,
+        wait: 12,
+        co2PerKm: 0.09,
+      },
+    };
 
-  const newsletterEmail = document.getElementById("newsletterEmail");
+    let selectedMode = "car";
 
-  const newsletterMessage = document.getElementById("newsletterMessage");
+    const calculate = () => {
+      const distance = Number(distanceRange.value);
+      const mode = modes[selectedMode];
 
-  if (newsletterForm && newsletterEmail && newsletterMessage) {
-    newsletterForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+      const minutes = Math.max(
+        1,
+        Math.round((distance / mode.speed) * 60 + mode.wait),
+      );
 
-      newsletterMessage.className = "form-message";
+      const emissions = distance * mode.co2PerKm;
 
-      newsletterMessage.textContent = "";
+      $("#distanceValue").textContent = String(distance);
+      $("#journeyTime").textContent = String(minutes);
+      $("#co2Value").textContent = emissions.toFixed(1);
 
-      if (!newsletterEmail.checkValidity()) {
-        newsletterEmail.reportValidity();
+      $("#timeTrack").style.width = `${Math.min(100, (minutes / 180) * 100)}%`;
 
-        newsletterMessage.textContent = "Please enter a valid email address.";
+      $("#co2Track").style.width = `${Math.min(100, (emissions / 12) * 100)}%`;
+    };
 
-        newsletterMessage.classList.add("error");
+    distanceRange.addEventListener("input", calculate);
 
-        return;
-      }
+    $$("[data-mode]").forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedMode = button.dataset.mode;
 
-      newsletterMessage.textContent =
-        "Your email is valid! Connect a backend to save your subscription.";
+        $$("[data-mode]").forEach((item) => {
+          const active = item === button;
 
-      newsletterMessage.classList.add("success");
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        calculate();
+      });
+    });
+
+    calculate();
+  }
+
+  // Technology tabs.
+  const techDetails = {
+    ai: {
+      kicker: "INTELLIGENCE / HUMAN SUPPORT",
+      title: "AI that gives time back.",
+      description:
+        "Personal assistants could help organise information, reduce repetitive tasks and make complex services easier to navigate.",
+      question:
+        "Who controls the data, and can people understand how a recommendation was made?",
+    },
+
+    learning: {
+      kicker: "LEARNING / PERSONAL GROWTH",
+      title: "Education that adapts.",
+      description:
+        "Flexible learning tools could offer different explanations and practice paths while keeping teachers and community at the centre.",
+      question:
+        "Does every learner have fair access, support and a real human connection?",
+    },
+
+    robotics: {
+      kicker: "ROBOTICS / COLLABORATION",
+      title: "Machines that lend a hand.",
+      description:
+        "Robots may support repetitive or physically demanding tasks, creating more room for care, craft and creative work.",
+      question:
+        "Who benefits from automation, and how are workers supported through change?",
+    },
+
+    energy: {
+      kicker: "ENERGY / RESILIENT SYSTEMS",
+      title: "Power with less waste.",
+      description:
+        "Smarter grids and storage could help balance demand and bring renewable energy into more parts of everyday life.",
+      question:
+        "How can clean energy remain reliable, affordable and available to more communities?",
+    },
+  };
+
+  const techDetail = $("#techDetail");
+
+  if (techDetail) {
+    $$("[data-tech]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const data = techDetails[button.dataset.tech];
+
+        if (!data) return;
+
+        $$("[data-tech]").forEach((item) => {
+          const active = item === button;
+
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-selected", String(active));
+        });
+
+        const image = $("#techImage");
+
+        image.style.opacity = "0.2";
+
+        window.setTimeout(() => {
+          $("#techKicker").textContent = data.kicker;
+          $("#techTitle").textContent = data.title;
+          $("#techDescription").textContent = data.description;
+          $("#techQuestion").textContent = data.question;
+
+          image.src = button.dataset.image;
+          image.alt = button.dataset.imageAlt || "";
+
+          image.onload = () => {
+            image.style.opacity = "1";
+          };
+
+          if (image.complete) {
+            image.style.opacity = "1";
+          }
+        }, 140);
+      });
     });
   }
 
-  /* ===================== 7. CONTACT FORM ===================== */
-
-  const contactForm = document.getElementById("contactForm");
+  // Contact form validation and character counter.
+  const contactForm = $("#contactForm");
 
   if (contactForm) {
-    const contactMessage = document.getElementById("contactMessage");
+    const message = $("#message");
+    const messageCount = $("#messageCount");
+    const successPanel = $("#formSuccess");
+    const submitButton = $(".submit-button");
 
-    contactForm.addEventListener("submit", function (event) {
+    const updateCount = () => {
+      if (messageCount && message) {
+        messageCount.textContent = String(message.value.length);
+      }
+    };
+
+    message?.addEventListener("input", updateCount);
+    updateCount();
+
+    contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const requiredFields = contactForm.querySelectorAll("[required]");
+      contactForm.classList.add("was-validated");
 
-      let isValid = true;
+      if (!contactForm.checkValidity()) {
+        const invalid = $(
+          ".form-control:invalid, .form-select:invalid, #consent:not(:checked)",
+          contactForm,
+        );
 
-      requiredFields.forEach(function (field) {
-        if (!field.checkValidity()) {
-          field.classList.add("is-invalid");
+        invalid?.focus();
 
-          field.classList.remove("is-valid");
-
-          isValid = false;
-        } else {
-          field.classList.remove("is-invalid");
-
-          field.classList.add("is-valid");
-        }
-      });
-
-      if (!isValid) {
-        if (contactMessage) {
-          contactMessage.textContent =
-            "Please complete all required fields correctly.";
-
-          contactMessage.className = "form-message error";
-        }
-
-        const firstInvalidField = contactForm.querySelector(":invalid");
-
-        if (firstInvalidField) {
-          firstInvalidField.focus();
-        }
-
+        showToast("Please check the highlighted fields.");
         return;
       }
 
-      if (contactMessage) {
-        contactMessage.textContent =
-          "The form is valid, but a backend is needed to send your message.";
-
-        contactMessage.className = "form-message success";
+      if (successPanel) {
+        successPanel.classList.remove("d-none");
       }
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      showToast(
+        "Your form is complete and ready for a real submission service.",
+      );
     });
 
-    contactForm
-      .querySelectorAll("input, textarea, select")
+    $("#editMessage")?.addEventListener("click", () => {
+      successPanel?.classList.add("d-none");
 
-      .forEach(function (field) {
-        field.addEventListener("input", function () {
-          if (field.checkValidity()) {
-            field.classList.remove("is-invalid");
-          }
-        });
-      });
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+
+      $("#fullName")?.focus();
+    });
+
+    $("#consent")?.addEventListener("change", () => {
+      const feedback = $("#consentFeedback");
+
+      if (feedback) {
+        feedback.style.display = "none";
+      }
+    });
   }
 
-  /* ===================== 8. UPDATE ACTIVE NAV LINK ===================== */
+  // Newsletter demo.
+  const newsletterForm = $("#newsletterForm");
 
-  const currentPage =
-    window.location.pathname
+  newsletterForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-      .split("/")
+    const email = $("#newsletterEmail");
+    const feedback = $("#newsletterFeedback");
 
-      .pop() || "index.html";
+    if (!email?.checkValidity()) {
+      email?.reportValidity();
+      return;
+    }
 
-  document.querySelectorAll(".fx-navbar .nav-link").forEach(function (link) {
-    const linkPage = link.getAttribute("href");
+    if (feedback) {
+      feedback.textContent =
+        "Looks good — connect a newsletter provider to activate subscriptions.";
+    }
 
-    if (linkPage === currentPage) {
-      link.classList.add("active");
+    newsletterForm.reset();
+  });
 
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.classList.remove("active");
+  // Close dialogs with the Escape key.
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const openDialog = $("dialog[open]");
 
-      link.removeAttribute("aria-current");
+      if (openDialog) openDialog.close();
     }
   });
 
-  /* ===================== 9. CONSOLE MESSAGE ===================== */
-
-  console.log("FutureX website is ready!");
+  // Make the toast helper available to other scripts.
+  window.FutureX = Object.freeze({
+    showToast,
+  });
 });
-  
