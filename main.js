@@ -242,3 +242,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("FutureX website is ready!");
 });
+  

@@ -6,14 +6,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>FutureX | Life in 2025</title>
+    <meta name="theme-color" content="#f8f7ff" />
 
     <meta
       name="description"
-      content="Discover the future of smart cities, advanced technology, sustainable mobility and a connected world."
+      content="FutureX — Explore life in 2050, from smart cities and electric mobility to artificial intelligence and clean energy."
     />
 
-    <!-- Google Fonts -->
+    <title>FutureX | Life in 2050</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -24,595 +24,665 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap 5 -->
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome -->
-
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
     />
 
-    <!-- Main CSS: we will create this at the end -->
-
-    <link rel="stylesheet" href="style.css" />
+    <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body id="top">
-    <!-- =========================
+  <body>
+    <div class="toast-message" aria-live="polite"></div>
 
-         NAVBAR
+    <!-- Navigation -->
 
-    ========================== -->
+    <nav class="site-nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html" aria-label="FutureX Home">
+          <span class="brand-mark">FX</span>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top fx-navbar">
-      <div class="container">
-        <!-- Logo -->
-
-        <a class="navbar-brand fx-logo" href="index.html">
-          Future<span>X</span>
+          <span>Future<span>X</span></span>
         </a>
 
-        <!-- Mobile Menu Button -->
-
         <button
-          class="navbar-toggler"
+          class="nav-toggle"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
+          aria-label="Open navigation"
           aria-expanded="false"
-          aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="fa-solid fa-bars"></i>
         </button>
 
-        <!-- Navigation Links -->
+        <div class="nav-links">
+          <a href="index.html">Home</a>
 
-        <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
+          <a href="vision.html">Our Vision</a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="vision.html">Vision</a>
-            </li>
+          <a href="cities.html">Smart Cities</a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="cities.html">Cities</a>
-            </li>
+          <a href="mobility.html">Mobility</a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="mobility.html">Mobility</a>
-            </li>
+          <a href="technology.html">Technology</a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="technology.html">Technology</a>
-            </li>
+          <a href="contact.html">Contact</a>
+        </div>
 
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-
-          <a href="vision.html" class="btn btn-fx nav-cta">
-            Explore
-
-            <i class="fa-solid fa-arrow-right ms-2"></i>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn-fx btn-primary-fx btn-small">
+            Explore With Us <span>↗</span>
           </a>
         </div>
       </div>
     </nav>
 
-    <main>
-      <!-- =========================
+    <!-- Hero Section -->
 
-             HERO SECTION
+    <header class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">
+            <span class="status-dot"></span>
 
-        ========================== -->
+            A GLIMPSE INTO 2050
+          </span>
 
-      <section class="hero-section">
-        <!-- Background Image -->
+          <h1>
+            The future is<br />
 
-        <div class="hero-bg"></div>
+            closer than<br />
 
-        <!-- Dark Overlay -->
+            <span class="gradient-text">you think.</span>
+          </h1>
 
-        <div class="hero-overlay"></div>
+          <p class="hero-description">
+            Discover a world transformed by intelligent technology, sustainable
+            cities, electric mobility, and ideas that could redefine the way we
+            live.
+          </p>
 
-        <div class="container hero-container">
-          <div class="row align-items-center min-vh-100">
-            <div class="col-lg-8 hero-content">
-              <span class="eyebrow reveal">
-                <span class="status-dot"></span>
+          <div class="hero-actions">
+            <a href="vision.html" class="btn-fx btn-primary-fx">
+              Explore the Future <span>↗</span>
+            </a>
 
-                CLEANER · SMARTER · BRIGHTER
+            <a href="#discover" class="btn-fx btn-light-fx">
+              Discover More <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="avatar-stack">
+              <span><i class="fa-solid fa-city"></i></span>
+
+              <span><i class="fa-solid fa-microchip"></i></span>
+
+              <span><i class="fa-solid fa-leaf"></i></span>
+            </div>
+
+            <div>
+              <strong>One planet. Endless possibilities.</strong>
+
+              <p>Explore the ideas shaping tomorrow.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=85"
+              alt="A futuristic city skyline at night"
+              class="hero-main-image"
+            />
+
+            <div class="hero-image-overlay"></div>
+
+            <div class="floating-card floating-card-top">
+              <span class="floating-icon purple">
+                <i class="fa-solid fa-brain"></i>
               </span>
 
-              <h1 class="hero-title reveal">
-                Future<span>X</span>
+              <div>
+                <strong>Intelligent Living</strong>
 
-                <br />
-
-                Life in <span class="gradient-text">2025</span>
-              </h1>
-
-              <p class="hero-description reveal">
-                A vision of a connected world, where technology and humanity
-                build a better tomorrow.
-              </p>
-
-              <div class="hero-actions reveal">
-                <a href="vision.html" class="btn btn-fx btn-lg">
-                  Explore the Future
-
-                  <i class="fa-solid fa-arrow-right ms-2"></i>
-                </a>
-
-                <a href="#discover" class="hero-secondary-link">
-                  <i class="fa-regular fa-circle-play me-2"></i>
-
-                  Discover More
-                </a>
-              </div>
-
-              <div class="hero-note reveal">
-                <span class="hero-note-line"></span>
-
-                IMAGINE WHAT COMES NEXT
+                <small>Technology meets everyday life</small>
               </div>
             </div>
+
+            <div class="floating-card floating-card-bottom">
+              <span class="floating-icon green">
+                <i class="fa-solid fa-leaf"></i>
+              </span>
+
+              <div>
+                <strong>A Greener Tomorrow</strong>
+
+                <small>Building a more sustainable world</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-orbit orbit-one"></div>
+
+          <div class="hero-orbit orbit-two"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Statistics -->
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <span class="stat-number">2050</span>
+
+            <span class="stat-label">Our Future Horizon</span>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-number">AI+</span>
+
+            <span class="stat-label">Intelligent Innovation</span>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-number">100%</span>
+
+            <span class="stat-label">Aiming for a Greener Future</span>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-number">∞</span>
+
+            <span class="stat-label">Possibilities Ahead</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Scroll Indicator -->
+    <!-- Introduction -->
 
-        <a href="#statistics" class="hero-scroll">
-          <span>SCROLL TO EXPLORE</span>
+    <section class="section" id="discover">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">WELCOME TO FUTUREX</span>
 
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
+          <h2>Imagine life in <span class="gradient-text">2050.</span></h2>
 
-        <div class="hero-index">01 <span>/</span> 06</div>
-      </section>
-
-      <!-- =========================
-
-             STATISTICS
-
-        ========================== -->
-
-      <section class="stats-section" id="statistics">
-        <div class="container">
-          <div class="row g-0">
-            <div class="col-6 col-lg-3">
-              <div class="stat-item reveal">
-                <span class="stat-number" data-count="100" data-suffix="%"
-                  >0</span
-                >
-
-                <p>Renewable Energy Goal</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-              <div class="stat-item reveal">
-                <span class="stat-number" data-count="10" data-suffix="B+"
-                  >0</span
-                >
-
-                <p>Connected Devices</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-              <div class="stat-item reveal">
-                <span class="stat-number" data-count="0" data-suffix="%"
-                  >0</span
-                >
-
-                <p>Carbon Emissions Goal</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-              <div class="stat-item reveal">
-                <span class="stat-number" data-count="100" data-suffix="%"
-                  >0</span
-                >
-
-                <p>Smart Infrastructure Goal</p>
-              </div>
-            </div>
-          </div>
-
-          <p class="stats-disclaimer">
-            Illustrative project goals, not verified real-world statistics.
+          <p>
+            What if our cities were smarter, our energy cleaner, and technology
+            helped us solve some of humanity's biggest challenges?
           </p>
         </div>
-      </section>
 
-      <!-- =========================
+        <div class="split">
+          <div class="reveal">
+            <div class="image-frame">
+              <img
+                src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1100&q=85"
+                alt="Modern city buildings and urban infrastructure"
+              />
 
-             DISCOVER THE FUTURE
-
-        ========================== -->
-
-      <section class="section-padding discover-section" id="discover">
-        <div class="container">
-          <div class="section-heading reveal">
-            <div>
-              <span class="eyebrow"> A NEW ERA BEGINS </span>
-
-              <h2>
-                Explore the
-
-                <span class="gradient-text">Future</span>
-              </h2>
-            </div>
-
-            <p>
-              Discover the ideas and innovations shaping a smarter and more
-              sustainable world.
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <!-- Vision Card -->
-
-            <div class="col-md-6 col-xl-3">
-              <a href="vision.html" class="feature-card reveal">
-                <div class="feature-card-top">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-earth-americas"></i>
-                  </div>
-
-                  <span class="feature-number">01</span>
-                </div>
-
-                <span class="feature-category"> OUR VISION </span>
-
-                <h3>A Sustainable Tomorrow</h3>
-
-                <p>
-                  Building a future where people and nature thrive together.
-                </p>
-
-                <span class="card-link">
-                  Explore Vision
-
-                  <i class="fa-solid fa-arrow-right"></i>
+              <div class="image-caption">
+                <span class="caption-icon">
+                  <i class="fa-solid fa-earth-americas"></i>
                 </span>
-              </a>
-            </div>
 
-            <!-- Cities Card -->
+                <div>
+                  <strong>A World of Possibilities</strong>
 
-            <div class="col-md-6 col-xl-3">
-              <a href="cities.html" class="feature-card reveal">
-                <div class="feature-card-top">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-city"></i>
-                  </div>
-
-                  <span class="feature-number">02</span>
+                  <small>Explore what tomorrow could look like.</small>
                 </div>
-
-                <span class="feature-category"> SMART CITIES </span>
-
-                <h3>Smarter Urban Living</h3>
-
-                <p>
-                  Connected cities designed around people, technology and
-                  nature.
-                </p>
-
-                <span class="card-link">
-                  Explore Cities
-
-                  <i class="fa-solid fa-arrow-right"></i>
-                </span>
-              </a>
-            </div>
-
-            <!-- Mobility Card -->
-
-            <div class="col-md-6 col-xl-3">
-              <a href="mobility.html" class="feature-card reveal">
-                <div class="feature-card-top">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-car-side"></i>
-                  </div>
-
-                  <span class="feature-number">03</span>
-                </div>
-
-                <span class="feature-category"> FUTURE MOBILITY </span>
-
-                <h3>Movement Without Limits</h3>
-
-                <p>
-                  Cleaner transportation and smarter ways to move around our
-                  world.
-                </p>
-
-                <span class="card-link">
-                  Explore Mobility
-
-                  <i class="fa-solid fa-arrow-right"></i>
-                </span>
-              </a>
-            </div>
-
-            <!-- Technology Card -->
-
-            <div class="col-md-6 col-xl-3">
-              <a href="technology.html" class="feature-card reveal">
-                <div class="feature-card-top">
-                  <div class="feature-icon">
-                    <i class="fa-solid fa-microchip"></i>
-                  </div>
-
-                  <span class="feature-number">04</span>
-                </div>
-
-                <span class="feature-category"> INNOVATION </span>
-
-                <h3>Intelligence Reimagined</h3>
-
-                <p>
-                  Exploring artificial intelligence and the technologies of
-                  tomorrow.
-                </p>
-
-                <span class="card-link">
-                  Explore Technology
-
-                  <i class="fa-solid fa-arrow-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =========================
-
-             SMART CITY SHOWCASE
-
-        ========================== -->
-
-      <section class="showcase-section">
-        <div class="showcase-bg"></div>
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="showcase-content reveal">
-                <span class="eyebrow"> THE CITY OF TOMORROW </span>
-
-                <h2>
-                  Where innovation meets
-                  <span class="gradient-text">nature.</span>
-                </h2>
-
-                <p>
-                  Imagine cities powered by clean energy, connected by
-                  intelligent infrastructure and designed to give people a
-                  better life.
-                </p>
-
-                <a href="cities.html" class="btn btn-fx">
-                  Discover Smart Cities
-
-                  <i class="fa-solid fa-arrow-right ms-2"></i>
-                </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="showcase-label">SMART LIVING · BETTER TOMORROW</div>
-      </section>
-
-      <!-- =========================
-
-             FUTURE TECHNOLOGY
-
-        ========================== -->
-
-      <section class="section-padding technology-preview">
-        <div class="container">
-          <div class="tech-banner reveal">
-            <div class="tech-banner-content">
-              <span class="eyebrow"> BEYOND TODAY </span>
-
-              <h2>
-                Tomorrow is built by what we
-
-                <span class="gradient-text">imagine.</span>
-              </h2>
-
-              <p>
-                Discover how artificial intelligence, clean energy and digital
-                innovation can reshape our world.
-              </p>
-
-              <a href="technology.html" class="btn btn-fx">
-                Explore Technology
-
-                <i class="fa-solid fa-arrow-right ms-2"></i>
-              </a>
-            </div>
-
-            <div class="tech-decoration" aria-hidden="true">
-              <div class="tech-orbit orbit-one"></div>
-
-              <div class="tech-orbit orbit-two"></div>
-
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =========================
-
-             CONTACT CTA
-
-        ========================== -->
-
-      <section class="cta-section">
-        <div class="container text-center">
-          <div class="cta-content reveal">
-            <span class="eyebrow"> THE FUTURE STARTS WITH US </span>
+          <div class="split-content reveal">
+            <span class="eyebrow">BEYOND TODAY</span>
 
             <h2>
-              Let's build something
+              Tomorrow isn't just coming.<br />
 
-              <span class="gradient-text">extraordinary.</span>
+              <span class="gradient-text">We're shaping it.</span>
             </h2>
 
-            <p>Have an idea for tomorrow? Let's explore it together.</p>
+            <p class="lead-copy">
+              FutureX is your window into the possibilities of 2050. From
+              artificial intelligence and robotics to sustainable architecture
+              and electric transportation, we explore how emerging technologies
+              could change our everyday lives.
+            </p>
 
-            <a href="contact.html" class="btn btn-fx btn-lg">
-              Get in Touch
+            <p class="lead-copy">
+              The future is not guaranteed. It depends on the choices we make,
+              the problems we solve, and the opportunities we create together.
+            </p>
 
-              <i class="fa-solid fa-arrow-right ms-2"></i>
+            <ul class="check-list">
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Discover emerging technologies and ideas</span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Explore sustainable ways of living</span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Understand the opportunities and challenges ahead</span>
+              </li>
+            </ul>
+
+            <a href="vision.html" class="btn-fx btn-primary-fx">
+              Discover Our Vision <span>↗</span>
             </a>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- =========================
+    <!-- Main Topics -->
 
-         FOOTER
-
-    ========================== -->
-
-    <footer class="fx-footer">
+    <section class="section soft-section" id="topics">
       <div class="container">
-        <div class="row gy-5">
-          <!-- Brand -->
+        <div class="section-head center reveal">
+          <span class="eyebrow">EXPLORE THE POSSIBILITIES</span>
 
-          <div class="col-lg-4">
-            <a href="index.html" class="footer-logo"> Future<span>X</span> </a>
+          <h2>A world of <span class="gradient-text">new ideas.</span></h2>
 
-            <p class="footer-description">
-              A smarter, cleaner and more connected tomorrow. The future is not
-              just something we enter. It is something we create.
+          <p>
+            Explore the technologies and innovations that could shape our world
+            by 2050.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article
+            class="topic-card reveal"
+            data-detail="future-cities"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85"
+              alt="Smart city skyline"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">01 / Urban Life</span>
+              </div>
+
+              <h3>Smart Cities</h3>
+
+              <p>
+                Explore connected infrastructure, intelligent city services,
+                greener buildings, and more accessible urban communities.
+              </p>
+
+              <span class="card-link">Explore Smart Cities ←</span>
+            </div>
+          </article>
+
+          <article
+            class="topic-card reveal"
+            data-detail="electric-mobility"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85"
+              alt="Electric vehicle charging station"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">02 / Transportation</span>
+              </div>
+
+              <h3>Electric Mobility</h3>
+
+              <p>
+                Discover electric vehicles, smarter transport networks, and
+                cleaner ways to move people and goods.
+              </p>
+
+              <span class="card-link">Explore Mobility ←</span>
+            </div>
+          </article>
+
+          <article
+            class="topic-card reveal"
+            data-detail="ai-assistants"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85"
+              alt="Artificial intelligence technology"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">03 / Intelligence</span>
+              </div>
+
+              <h3>Artificial Intelligence</h3>
+
+              <p>
+                Discover how AI could support creativity, research, everyday
+                tasks, and more informed decision-making.
+              </p>
+
+              <span class="card-link">Explore AI ←</span>
+            </div>
+          </article>
+
+          <article
+            class="topic-card reveal"
+            data-detail="robotics"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85"
+              alt="Modern robotics technology"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">04 / Automation</span>
+              </div>
+
+              <h3>Robotics</h3>
+
+              <p>
+                Explore how robots could assist with manufacturing, scientific
+                research, healthcare, and daily work.
+              </p>
+
+              <span class="card-link">Explore Robotics ←</span>
+            </div>
+          </article>
+
+          <article
+            class="topic-card reveal"
+            data-detail="clean-energy"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85"
+              alt="Wind turbines generating renewable energy"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">05 / Sustainability</span>
+              </div>
+
+              <h3>Clean Energy</h3>
+
+              <p>
+                Learn about renewable power, efficient energy systems, and the
+                challenges of building a more sustainable future.
+              </p>
+
+              <span class="card-link">Explore Clean Energy ←</span>
+            </div>
+          </article>
+
+          <article
+            class="topic-card reveal"
+            data-detail="digital-health"
+            data-searchable
+          >
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
+              alt="Digital healthcare and medical technology"
+            />
+
+            <div class="body">
+              <div class="tag-row">
+                <span class="tag">06 / Wellbeing</span>
+              </div>
+
+              <h3>Digital Health</h3>
+
+              <p>
+                Discover how connected healthcare and digital tools could
+                support patients and healthcare professionals.
+              </p>
+
+              <span class="card-link">Explore Digital Health ←</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="center mt-5">
+          <a href="technology.html" class="btn-fx btn-light-fx">
+            Explore All Technologies <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Timeline -->
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">THE ROAD AHEAD</span>
+
+          <h2>
+            From today's ideas to
+            <span class="gradient-text">tomorrow's world.</span>
+          </h2>
+
+          <p>
+            A possible journey toward a more connected and sustainable future.
+            These milestones are illustrative, not guaranteed predictions.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <span class="eyebrow">TODAY</span>
+
+            <h3>Ideas & Innovation</h3>
+
+            <p>
+              Research, experiments, and new ideas help us understand which
+              technologies can solve real-world problems.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <span class="eyebrow">THE NEXT DECADES</span>
+
+            <h3>Smarter Systems</h3>
+
+            <p>
+              AI, clean energy, and connected infrastructure may become more
+              widely integrated into everyday life.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-earth-europe"></i>
+            </div>
+
+            <span class="eyebrow">2050 & BEYOND</span>
+
+            <h3>New Possibilities</h3>
+
+            <p>
+              Responsible innovation could help communities build more
+              resilient, accessible, and sustainable futures.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Banner -->
+
+    <section class="image-banner-section">
+      <div class="container">
+        <div class="image-banner reveal">
+          <img
+            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=85"
+            alt="Innovative modern architecture"
+          />
+
+          <div class="image-banner-content">
+            <span class="eyebrow">THE FUTURE IS A SHARED PROJECT</span>
+
+            <h2>
+              Think beyond today.<br />
+
+              <span class="gradient-text">Build for tomorrow.</span>
+            </h2>
+
+            <p>
+              The best future is not simply the most advanced one. It is a
+              future that works better for people and the planet.
             </p>
 
-            <div class="social-links">
-              <a href="https://www.instagram.com/" aria-label="Instagram">
+            <a href="vision.html" class="btn-fx btn-primary-fx">
+              Explore Our Vision <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">YOUR IDEAS MATTER</span>
+
+            <h2>Let's imagine what comes next.</h2>
+
+            <p>
+              Join the conversation about technology, sustainability, and the
+              possibilities of life in 2050.
+            </p>
+          </div>
+
+          <a href="contact.html" class="btn-fx btn-light-fx">
+            Get in Touch <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">FX</span>
+
+              <span style="color: #fff">Future<span>X</span></span>
+            </a>
+
+            <p>
+              Life in 2050. Explore smart cities, clean energy, future mobility,
+              and the technologies shaping tomorrow.
+            </p>
+
+            <div class="social-row">
+              <a href="#" data-social aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
 
-              <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+              <a href="#" data-social aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
 
-              <a href="https://www.youtube.com/" aria-label="YouTube">
+              <a href="#" data-social aria-label="YouTube">
                 <i class="fa-brands fa-youtube"></i>
-              </a>
-
-              <a href="https://x.com/" aria-label="X">
-                <i class="fa-brands fa-x-twitter"></i>
               </a>
             </div>
           </div>
 
-          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Explore</h4>
 
-          <div class="col-6 col-lg-2 offset-lg-1">
-            <h4 class="footer-heading">Explore</h4>
+            <a href="vision.html">Our Vision</a>
 
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
+            <a href="cities.html">Smart Cities</a>
 
-              <li><a href="vision.html">Vision</a></li>
+            <a href="mobility.html">Future Mobility</a>
 
-              <li><a href="cities.html">Cities</a></li>
-
-              <li><a href="mobility.html">Mobility</a></li>
-
-              <li><a href="technology.html">Technology</a></li>
-
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="technology.html">Technology</a>
           </div>
 
-          <!-- Newsletter -->
+          <div class="footer-col">
+            <h4>Discover</h4>
 
-          <div class="col-lg-5">
-            <h4 class="footer-heading">Stay Ahead</h4>
+            <a href="details.html?id=ai-assistants">Artificial Intelligence</a>
 
-            <p class="footer-description">
-              Get updates about technology, innovation and the world of
-              tomorrow.
+            <a href="details.html?id=robotics">Robotics</a>
+
+            <a href="details.html?id=clean-energy">Clean Energy</a>
+
+            <a href="details.html?id=digital-health">Digital Health</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+
+            <p style="color: #b6b5d1; line-height: 1.8; font-size: 0.9rem">
+              Have a question or an idea about the future? We would love to hear
+              from you.
             </p>
 
-            <form class="newsletter-form" id="newsletterForm">
-              <label for="newsletterEmail" class="visually-hidden">
-                Email address
-              </label>
-
-              <input
-                type="email"
-                id="newsletterEmail"
-                placeholder="Enter your email address"
-                required
-              />
-
-              <button type="submit" aria-label="Subscribe">
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </form>
-
-            <p
-              class="form-message"
-              id="newsletterMessage"
-              aria-live="polite"
-            ></p>
+            <a
+              href="contact.html"
+              class="btn-fx btn-primary-fx btn-small"
+              style="display: inline-flex; color: #fff"
+            >
+              Contact FutureX ↗
+            </a>
           </div>
         </div>
 
-        <!-- Footer Bottom -->
-
         <div class="footer-bottom">
-          <p>
-            © <span id="currentYear">2025</span>
+          <span>© <span data-year></span> FutureX — Life in 2050</span>
 
-            FutureX. All rights reserved.
-          </p>
-
-          <a href="#top" class="back-to-top">
-            Back to top
-
-            <i class="fa-solid fa-arrow-up ms-1"></i>
-          </a>
+          <span>Built to explore tomorrow, today.</span>
         </div>
       </div>
     </footer>
 
-    <!-- Back To Top Button -->
-
-    <button class="back-top-button" id="backTop" aria-label="Back to top">
+    <button class="back-top" type="button" aria-label="Back to top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Bootstrap JavaScript -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Our JavaScript: we will create it at the end -->
 
     <script src="main.js"></script>
   </body>
