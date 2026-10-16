@@ -1,10 +1,11 @@
-/* =====================================================
-   FUTUREX — LIFE IN 2050
-   Main JavaScript
-===================================================== */
+/* =========================================================
+
+   FUTUREX — MAIN JAVASCRIPT
+
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // ---------- 1. CURRENT YEAR ----------
+  /* ===================== 1. CURRENT YEAR ===================== */
 
   const currentYear = document.getElementById("currentYear");
 
@@ -12,261 +13,232 @@ document.addEventListener("DOMContentLoaded", function () {
     currentYear.textContent = new Date().getFullYear();
   }
 
-  // ---------- 2. BACK TO TOP BUTTON ----------
+  /* ===================== 2. NAVBAR SCROLL EFFECT ===================== */
 
-  const backToTop = document.getElementById("backToTop");
+  const navbar = document.querySelector(".fx-navbar");
 
-  if (backToTop) {
-    function updateBackToTop() {
-      if (window.scrollY > 350) {
-        backToTop.classList.add("visible");
-      } else {
-        backToTop.classList.remove("visible");
-      }
+  function updateNavbar() {
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar-scrolled");
+    } else {
+      navbar.classList.remove("navbar-scrolled");
     }
+  }
 
-    window.addEventListener("scroll", updateBackToTop, {
-      passive: true,
-    });
+  updateNavbar();
 
-    updateBackToTop();
+  window.addEventListener("scroll", updateNavbar);
 
-    backToTop.addEventListener("click", function () {
+  /* ===================== 3. BACK TO TOP ===================== */
+
+  const backTop = document.getElementById("backTop");
+
+  function updateBackTop() {
+    if (!backTop) return;
+
+    if (window.scrollY > 350) {
+      backTop.classList.add("visible");
+    } else {
+      backTop.classList.remove("visible");
+    }
+  }
+
+  updateBackTop();
+
+  window.addEventListener("scroll", updateBackTop);
+
+  if (backTop) {
+    backTop.addEventListener("click", function () {
       window.scrollTo({
         top: 0,
+
         behavior: "smooth",
       });
     });
   }
 
-  // ---------- 3. MOBILE NAVIGATION ----------
+  /* ===================== 4. SCROLL REVEAL ANIMATION ===================== */
 
-  const navLinks = document.querySelectorAll(".future-navbar .nav-link");
+  const revealElements = document.querySelectorAll("[data-reveal]");
 
-  const navbarCollapse = document.getElementById("futureNavbar");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
 
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (
-        navbarCollapse &&
-        navbarCollapse.classList.contains("show") &&
-        window.bootstrap
-      ) {
-        const collapseInstance =
-          window.bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
 
-        collapseInstance.hide();
-      }
+      {
+        threshold: 0.12,
+      },
+    );
+
+    revealElements.forEach(function (element) {
+      revealObserver.observe(element);
     });
-  });
-
-  // ---------- 4. TOAST MESSAGE ----------
-
-  const toastMessage = document.getElementById("toastMessage");
-
-  let toastTimeout;
-
-  function showToast(message) {
-    if (!toastMessage) {
-      return;
-    }
-
-    toastMessage.textContent = message;
-    toastMessage.classList.add("show");
-
-    clearTimeout(toastTimeout);
-
-    toastTimeout = setTimeout(function () {
-      toastMessage.classList.remove("show");
-    }, 3500);
+  } else {
+    revealElements.forEach(function (element) {
+      element.classList.add("revealed");
+    });
   }
 
-  // ---------- 5. NEWSLETTER FORM ----------
+  /* ===================== 5. CLOSE MOBILE NAVBAR ===================== */
+
+  const navbarCollapse = document.getElementById("mainNavbar");
+
+  const navbarLinks = document.querySelectorAll(
+    "#mainNavbar .nav-link, #mainNavbar .nav-cta",
+  );
+
+  if (navbarCollapse && window.bootstrap) {
+    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(
+      navbarCollapse,
+      {
+        toggle: false,
+      },
+    );
+
+    navbarLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (
+          window.innerWidth < 992 &&
+          navbarCollapse.classList.contains("show")
+        ) {
+          collapseInstance.hide();
+        }
+      });
+    });
+  }
+
+  /* ===================== 6. NEWSLETTER FORM ===================== */
 
   const newsletterForm = document.getElementById("newsletterForm");
-  const newsletterEmail = document.getElementById("newsletterEmail");
-  const newsletterFeedback = document.getElementById("newsletterFeedback");
 
-  if (newsletterForm) {
+  const newsletterEmail = document.getElementById("newsletterEmail");
+
+  const newsletterMessage = document.getElementById("newsletterMessage");
+
+  if (newsletterForm && newsletterEmail && newsletterMessage) {
     newsletterForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      if (!newsletterForm.checkValidity()) {
-        newsletterForm.reportValidity();
-        return;
-      }
+      newsletterMessage.className = "form-message";
 
-      const email = newsletterEmail ? newsletterEmail.value.trim() : "";
+      newsletterMessage.textContent = "";
 
-      if (!email) {
-        if (newsletterFeedback) {
-          newsletterFeedback.textContent = "Please enter your email address.";
+      if (!newsletterEmail.checkValidity()) {
+        newsletterEmail.reportValidity();
 
-          newsletterFeedback.classList.add("error");
-        }
+        newsletterMessage.textContent = "Please enter a valid email address.";
+
+        newsletterMessage.classList.add("error");
 
         return;
       }
 
-      if (newsletterFeedback) {
-        newsletterFeedback.textContent =
-          "Your email looks valid. Newsletter subscription is not connected yet.";
+      newsletterMessage.textContent =
+        "Your email is valid! Connect a backend to save your subscription.";
 
-        newsletterFeedback.classList.remove("error");
-      }
-
-      showToast(
-        "Demo only: newsletter subscription is not connected to a server yet.",
-      );
-
-      newsletterForm.reset();
+      newsletterMessage.classList.add("success");
     });
   }
 
-  // ---------- 6. CONTACT FORM ----------
+  /* ===================== 7. CONTACT FORM ===================== */
 
   const contactForm = document.getElementById("contactForm");
-  const contactFeedback = document.getElementById("contactFeedback");
 
   if (contactForm) {
+    const contactMessage = document.getElementById("contactMessage");
+
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
+      const requiredFields = contactForm.querySelectorAll("[required]");
 
-      const nameField = document.getElementById("contactName");
-      const emailField = document.getElementById("contactEmail");
-      const subjectField = document.getElementById("contactSubject");
-      const messageField = document.getElementById("contactMessage");
+      let isValid = true;
 
-      const name = nameField ? nameField.value.trim() : "";
-      const email = emailField ? emailField.value.trim() : "";
-      const subject = subjectField ? subjectField.value : "";
-      const message = messageField ? messageField.value.trim() : "";
+      requiredFields.forEach(function (field) {
+        if (!field.checkValidity()) {
+          field.classList.add("is-invalid");
 
-      if (!name || !email || !subject || !message) {
-        if (contactFeedback) {
-          contactFeedback.textContent = "Please complete all fields.";
+          field.classList.remove("is-valid");
 
-          contactFeedback.classList.add("error");
+          isValid = false;
+        } else {
+          field.classList.remove("is-invalid");
+
+          field.classList.add("is-valid");
+        }
+      });
+
+      if (!isValid) {
+        if (contactMessage) {
+          contactMessage.textContent =
+            "Please complete all required fields correctly.";
+
+          contactMessage.className = "form-message error";
+        }
+
+        const firstInvalidField = contactForm.querySelector(":invalid");
+
+        if (firstInvalidField) {
+          firstInvalidField.focus();
         }
 
         return;
       }
 
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (contactMessage) {
+        contactMessage.textContent =
+          "The form is valid, but a backend is needed to send your message.";
 
-      if (!emailPattern.test(email)) {
-        if (contactFeedback) {
-          contactFeedback.textContent = "Please enter a valid email address.";
-
-          contactFeedback.classList.add("error");
-        }
-
-        if (emailField) {
-          emailField.focus();
-        }
-
-        return;
+        contactMessage.className = "form-message success";
       }
-
-      const recipient = "hello@futurex.example";
-
-      const emailSubject = encodeURIComponent("FutureX Contact: " + subject);
-
-      const emailBody = encodeURIComponent(
-        "Name: " +
-          name +
-          "\n" +
-          "Email: " +
-          email +
-          "\n" +
-          "Subject: " +
-          subject +
-          "\n\n" +
-          "Message:\n" +
-          message,
-      );
-
-      if (contactFeedback) {
-        contactFeedback.textContent =
-          "Your message is prepared. Choose your email app to continue.";
-
-        contactFeedback.classList.remove("error");
-      }
-
-      showToast("Opening your email app. Review the message before sending.");
-
-      window.location.href =
-        "mailto:" +
-        recipient +
-        "?subject=" +
-        emailSubject +
-        "&body=" +
-        emailBody;
     });
+
+    contactForm
+      .querySelectorAll("input, textarea, select")
+
+      .forEach(function (field) {
+        field.addEventListener("input", function () {
+          if (field.checkValidity()) {
+            field.classList.remove("is-invalid");
+          }
+        });
+      });
   }
 
-  // ---------- 7. SMOOTH SCROLL FOR PAGE LINKS ----------
+  /* ===================== 8. UPDATE ACTIVE NAV LINK ===================== */
 
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
+  const currentPage =
+    window.location.pathname
 
-  internalLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      const targetId = link.getAttribute("href");
+      .split("/")
 
-      if (!targetId || targetId === "#") {
-        return;
-      }
+      .pop() || "index.html";
 
-      const targetElement = document.querySelector(targetId);
+  document.querySelectorAll(".fx-navbar .nav-link").forEach(function (link) {
+    const linkPage = link.getAttribute("href");
 
-      if (targetElement) {
-        event.preventDefault();
+    if (linkPage === currentPage) {
+      link.classList.add("active");
 
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    });
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.classList.remove("active");
+
+      link.removeAttribute("aria-current");
+    }
   });
 
-  // ---------- 8. CARD HOVER SUPPORT ----------
+  /* ===================== 9. CONSOLE MESSAGE ===================== */
 
-  const hoverCards = document.querySelectorAll(
-    ".future-card, .vision-info-card, .value-card, " +
-      ".city-feature-card, .city-day-card, " +
-      ".mobility-card, .mobility-option-card",
-  );
-
-  hoverCards.forEach(function (card) {
-    card.addEventListener("mouseenter", function () {
-      card.classList.add("is-hovered");
-    });
-
-    card.addEventListener("mouseleave", function () {
-      card.classList.remove("is-hovered");
-    });
-  });
-
-  // ---------- 9. IMAGE LOADING FALLBACK ----------
-
-  const pageImages = document.querySelectorAll("img");
-
-  pageImages.forEach(function (img) {
-    img.addEventListener("error", function () {
-      img.classList.add("image-error");
-      img.style.opacity = "0.35";
-    });
-  });
-
-  // ---------- 10. PAGE READY ----------
-
-  document.body.classList.add("page-loaded");
-
-  console.log("FutureX website is ready.");
+  console.log("FutureX website is ready!");
 });
